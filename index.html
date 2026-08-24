@@ -1,0 +1,5629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Elephant Dental Ltd - Emali</title>
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html,body{
+height:100%;
+background:#f5f7fb;
+overflow:hidden;
+}
+
+body{
+
+background:url("https://i.ibb.co/hxHF7T5R/images-5.jpg") center center;
+background-size:cover;
+background-repeat:no-repeat;
+
+}
+
+/* ===========================
+   SPLASH SCREEN
+=========================== */
+
+#splash{
+
+position:fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+
+background:white;
+
+z-index:99999;
+
+transition:.6s;
+
+}
+
+#splash img{
+
+width:170px;
+height:170px;
+
+border-radius:30px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+#splash h1{
+
+margin-top:20px;
+
+font-size:30px;
+
+font-weight:800;
+
+color:#0b7d4b;
+
+}
+
+#splash p{
+
+margin-top:8px;
+
+color:#777;
+
+font-size:15px;
+
+}
+
+.loader{
+
+margin-top:30px;
+
+width:230px;
+
+height:8px;
+
+background:#ddd;
+
+border-radius:50px;
+
+overflow:hidden;
+
+}
+
+.loader span{
+
+display:block;
+
+height:100%;
+
+width:0;
+
+background:#0b7d4b;
+
+animation:load 2.5s linear forwards;
+
+}
+
+@keyframes load{
+
+100%{
+
+width:100%;
+
+}
+
+}
+
+/* ======================
+LOGIN
+====================== */
+
+#loginPage{
+
+position:absolute;
+
+top:0;
+left:0;
+right:0;
+bottom:0;
+
+display:none;
+
+align-items:center;
+justify-content:center;
+
+padding:20px;
+
+background:rgba(255,255,255,.92);
+
+backdrop-filter:blur(4px);
+
+}
+
+.loginCard{
+
+width:100%;
+max-width:430px;
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 15px 45px rgba(0,0,0,.15);
+
+}
+
+.loginLogo{
+
+display:block;
+
+margin:auto;
+
+width:110px;
+
+height:110px;
+
+border-radius:50%;
+
+}
+
+.loginTitle{
+
+text-align:center;
+
+margin-top:18px;
+
+font-size:26px;
+
+font-weight:700;
+
+color:#0b7d4b;
+
+}
+
+.loginSub{
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:#777;
+
+}
+
+.input{
+
+width:100%;
+
+padding:15px;
+
+margin-bottom:15px;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+
+font-size:15px;
+
+outline:none;
+
+}
+
+.input:focus{
+
+border-color:#0b7d4b;
+
+}
+
+.btn{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+background:#0b7d4b;
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:background .18s ease, transform .12s ease, box-shadow .18s ease;
+
+}
+
+/*==================================================
+BUTTON CLICK STATES
+==================================================
+Normal action buttons remain GREEN.
+While the finger is pressing a button it briefly
+becomes ORANGE.
+After it has been clicked, it becomes PINK so the
+user can clearly distinguish clicked from unclicked.
+==================================================*/
+.btn:hover{
+background:#0b7d4b;
+}
+
+.btn:active{
+background:#f39c12 !important;
+transform:scale(.98);
+}
+
+.btn.clicked{
+background:#e91e63 !important;
+color:white !important;
+box-shadow:0 0 0 3px rgba(233,30,99,.18);
+}
+
+.btn.clicked:hover{
+background:#e91e63 !important;
+}
+
+/* ======================
+DASHBOARD
+====================== */
+
+#dashboard{
+
+display:none;
+
+width:100%;
+
+height:100%;
+
+}
+
+.sidebar{
+
+position:fixed;
+
+left:0;
+top:0;
+
+bottom:0;
+
+width:260px;
+
+background:#0b7d4b;
+
+padding:20px;
+
+overflow:auto;
+
+color:white;
+
+}
+
+.sidebar h2{
+
+margin-bottom:30px;
+
+font-size:22px;
+
+text-align:center;
+
+}
+
+.menu button{
+
+width:100%;
+
+padding:14px;
+
+margin-bottom:10px;
+
+border:none;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.12);
+
+color:white;
+
+text-align:left;
+
+font-size:15px;
+
+cursor:pointer;
+
+}
+
+.menu button:hover{
+
+background:white;
+
+color:#0b7d4b;
+
+}
+
+.main{
+
+margin-left:260px;
+
+height:100%;
+
+overflow:auto;
+
+padding:25px;
+
+}
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+
+}
+
+.header h1{
+
+color:#0b7d4b;
+
+font-size:30px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-bottom:25px;
+
+}
+
+.card{
+
+background:white;
+
+padding:22px;
+
+border-radius:18px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.card h3{
+
+color:#666;
+
+font-size:15px;
+
+margin-bottom:8px;
+
+}
+
+.card h2{
+
+font-size:32px;
+
+color:#0b7d4b;
+
+}
+
+.content{
+
+background:white;
+
+border-radius:18px;
+
+padding:20px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+min-height:500px;
+
+}
+
+/* =====================
+RESPONSIVE
+===================== */
+
+@media(max-width:900px){
+
+.sidebar{
+
+width:70px;
+
+}
+
+.sidebar h2{
+
+display:none;
+
+}
+
+.menu button{
+
+font-size:12px;
+
+padding:12px 6px;
+
+text-align:center;
+
+}
+
+.main{
+
+margin-left:70px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.loginCard{
+
+padding:25px;
+
+}
+
+.card h2{
+
+font-size:26px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ==========================
+SPLASH SCREEN
+=========================== -->
+
+<div id="splash">
+
+    <img src="https://i.ibb.co/VpVtHsyG/images-6.jpg">
+
+    <h1>Elephant Dental Ltd</h1>
+
+    <p>Emali Dental Management System</p>
+
+    <div class="loader">
+        <span></span>
+    </div>
+
+</div>
+
+<!-- ==========================
+LOGIN PAGE
+=========================== -->
+
+<div id="loginPage">
+
+<div class="loginCard">
+
+<img class="loginLogo"
+src="https://i.ibb.co/VpVtHsyG/images-6.jpg">
+
+<h2 class="loginTitle">
+Elephant Dental Ltd
+</h2>
+
+<p class="loginSub">
+Sign in to continue
+</p>
+
+<p style="font-size:13px;color:#777;margin-bottom:10px;">Select your assigned role, then enter your username and PIN.</p>
+
+<select
+id="loginRole"
+class="input">
+<option value="">Select Role</option>
+<option value="Administrator">Administrator</option>
+<option value="Receptionist">Receptionist</option>
+<option value="Dentist">Dentist</option>
+</select>
+
+<input
+type="text"
+id="loginUser"
+class="input"
+placeholder="Username">
+
+<input
+type="password"
+id="loginPassword"
+class="input"
+inputmode="numeric"
+maxlength="4"
+pattern="\d{4}"
+placeholder="PIN">
+
+<button
+class="btn"
+type="button"
+onclick="login()">
+
+LOGIN
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ==========================
+DASHBOARD
+=========================== -->
+
+<div id="dashboard">
+
+<div class="sidebar">
+
+<h2>ELEPHANT DENTAL</h2>
+
+<div class="menu">
+
+<button data-page="home" onclick="showPage('home')">
+🏠 Dashboard
+</button>
+
+<button data-page="patients" onclick="showPage('patients')">
+👨‍⚕️ Patients
+</button>
+
+<button data-page="appointments" onclick="showPage('appointments')">
+📅 Appointments
+</button>
+
+<button data-page="dentist" onclick="showPage('dentist')">
+🦷 Examination
+</button>
+
+<button data-page="treatments" onclick="showPage('treatments')">
+💉 Treatments
+</button>
+
+<button data-page="payments" onclick="showPage('payments')">
+💰 Payments
+</button>
+
+<button data-page="inventory" onclick="showPage('inventory')">
+📦 Inventory
+</button>
+
+<button data-page="reports" onclick="showPage('reports')">
+📈 Reports
+</button>
+
+<button data-page="staff" onclick="showPage('staff')">
+👥 Staff
+</button>
+
+<button data-page="settings" onclick="showPage('settings')">
+⚙ Settings
+</button>
+<button data-page="prices" onclick="showPage('prices')">
+💲 Treatment Prices
+</button>
+<button onclick="logout()">
+🚪 Logout
+</button>
+
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="header">
+
+<h1 id="pageTitle">
+Dashboard
+</h1>
+
+<div>
+
+Welcome,
+
+<b id="currentUser">
+
+Administrator
+
+</b>
+
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Total Patients</h3>
+
+<h2 id="totalPatients">
+0
+</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Today's Appointments</h3>
+
+<h2 id="todayAppointments">
+0
+</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Today's Revenue</h3>
+
+<h2 id="todayRevenue">
+KES 0
+</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Low Stock Items</h3>
+
+<h2 id="lowStock">
+0
+</h2>
+
+</div>
+
+</div>
+
+<div class="content" id="content">
+
+<h2>
+Welcome to Elephant Dental Ltd
+</h2>
+
+<br>
+
+<p>
+
+Use the menu on the left to manage patients,
+appointments, dentist records,
+payments,
+inventory,
+reports and settings.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+<!-- Firebase SDK -->
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+ getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword,
+ signOut, updatePassword, updateEmail, reauthenticateWithCredential, EmailAuthProvider
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+getFirestore,
+collection,
+getDocs,
+getDoc,
+addDoc,
+setDoc,
+updateDoc,
+deleteDoc,
+doc,
+query,
+where,
+orderBy,
+onSnapshot,
+serverTimestamp,
+runTransaction
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyBc-57yBToHcBP7KGG1rFZ_PV7Y654laVE",
+  authDomain: "elephant-61442.firebaseapp.com",
+  projectId: "elephant-61442",
+  storageBucket: "elephant-61442.firebasestorage.app",
+  messagingSenderId: "740708176118",
+  appId: "1:740708176118:web:bc178b0f9eebb7c158dcd7"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+const auth = getAuth(app);
+const staffAdminApp = initializeApp(firebaseConfig, "staffAdmin");
+const staffAdminAuth = getAuth(staffAdminApp);
+
+function clinicAuthErrorMessage(error){
+ const code=String(error?.code||"");
+ if(code.includes("invalid-credential")||code.includes("wrong-password")||code.includes("user-not-found")) return "Invalid username or PIN.";
+ if(code.includes("email-already-in-use")) return "That authentication account already exists.";
+ if(code.includes("weak-password")) return "The PIN could not be processed. Please try again.";
+ if(code.includes("too-many-requests")) return "Too many attempts. Please wait and try again.";
+ return error?.message||"Authentication failed.";
+}
+
+/* -------------------
+Splash Screen
+------------------- */
+
+setTimeout(function(){
+
+document.getElementById("splash").style.display="none";
+
+document.getElementById("loginPage").style.display="flex";
+
+},2500);
+
+/* -------------------
+Login
+------------------- */
+
+/* The real Firestore staff login is defined below.
+   This placeholder block is intentionally removed to avoid
+   having two competing login() functions. */
+
+
+
+
+/* -------------------
+   SINGLE LOGOUT HANDLER
+------------------- */
+window.logout = function(){
+    try{
+        window.currentStaff = null;
+
+/* ==========================================================
+   PRODUCTION HARDENING HELPERS
+========================================================== */
+window.clinicSafeNumber=function(value,fallback=0){
+    const n=Number(value);
+    return Number.isFinite(n)?n:fallback;
+};
+window.clinicSafeId=function(value){
+    return String(value??"").replace(/[^A-Za-z0-9_-]/g,"");
+};
+window.clinicSafeText=function(value){
+    return esc(value);
+};
+
+        window.currentRole = null;
+
+/*==================================================
+GREEN BUTTON / CLICKED BUTTON STATE
+==================================================*/
+document.addEventListener("click", function(event){
+
+    const button = event.target.closest("button.btn");
+
+    if(!button) return;
+
+    button.classList.add("clicked");
+
+});
+
+
+        const loginPage = document.getElementById("loginPage");
+        const dashboard = document.getElementById("dashboard");
+
+        if(dashboard) dashboard.style.display = "none";
+        if(loginPage) loginPage.style.display = "block";
+
+        const userInput = document.getElementById("loginUser");
+        const pinInput = document.getElementById("loginPassword");
+
+        if(userInput) userInput.value = "";
+        if(pinInput) pinInput.value = "";
+        const roleInput = document.getElementById("loginRole");
+        if(roleInput) roleInput.value = "";
+
+        const currentUser = document.getElementById("currentUser");
+        if(currentUser) currentUser.innerHTML = "";
+
+        const content = document.getElementById("content");
+        if(content) content.innerHTML = "";
+
+        const title = document.getElementById("pageTitle");
+        if(title) title.innerHTML = "Dashboard";
+
+        window.scrollTo(0,0);
+    }catch(error){
+        console.error("Logout error:", error);
+        // Last-resort reset if the page UI has become inconsistent.
+        window.location.reload();
+    }
+};
+
+/* -------------------
+Navigation
+------------------- */
+
+;
+window.showReports = async function(){
+
+document.getElementById("content").innerHTML = `
+
+<div style="display:flex;justify-content:space-between;align-items:center;">
+
+<h2>Reports</h2>
+
+<div style="display:flex;gap:10px;">
+
+<button class="btn" onclick="window.print()">
+
+🖨 Print Report
+
+</button>
+
+<button class="btn" onclick="exportReportsCSV()">
+
+📄 Export CSV
+
+</button>
+
+</div>
+
+</div>
+
+<input
+id="reportDate"
+class="input"
+type="date"
+style="max-width:250px;margin:15px 0;"
+onchange="showReports()">
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Patients</h3>
+<h2 id="reportPatients">Loading...</h2>
+</div>
+
+<div class="card">
+<h3>Total Appointments</h3>
+<h2 id="reportAppointments">Loading...</h2>
+</div>
+
+<div class="card">
+<h3>Total Payments</h3>
+<h2 id="reportPayments">Loading...</h2>
+</div>
+
+<div class="card">
+<h3>Total Revenue</h3>
+<h2 id="reportRevenue">Loading...</h2>
+</div>
+
+</div>
+
+`;
+
+const patientSnap = await getDocs(collection(db,"patients"));
+document.getElementById("reportPatients").innerHTML = patientSnap.size;
+
+const appointmentSnap = await getDocs(collection(db,"appointments"));
+document.getElementById("reportAppointments").innerHTML = appointmentSnap.size;
+
+const paymentSnap = await getDocs(collection(db,"payments"));
+
+document.getElementById("reportPayments").innerHTML = paymentSnap.size;
+
+const selectedDate =
+document.getElementById("reportDate")?.value || "";
+
+let revenue = 0;
+
+paymentSnap.forEach(docSnap=>{
+
+const p = docSnap.data();
+
+if(selectedDate==""){
+
+revenue += Number(p.amountPaid || 0);
+
+}else if(p.date===selectedDate){
+
+revenue += Number(p.amountPaid || 0);
+
+}
+
+});
+
+document.getElementById("reportRevenue").innerHTML =
+"KES " + revenue.toLocaleString();
+
+};
+window.exportReportsCSV = async function(){
+
+let csv = "Report,Value\n";
+
+const patientSnap = await getDocs(collection(db,"patients"));
+csv += "Total Patients," + patientSnap.size + "\n";
+
+const appointmentSnap = await getDocs(collection(db,"appointments"));
+csv += "Total Appointments," + appointmentSnap.size + "\n";
+
+const paymentSnap = await getDocs(collection(db,"payments"));
+
+csv += "Total Payments," + paymentSnap.size + "\n";
+
+let revenue = 0;
+
+paymentSnap.forEach(docSnap=>{
+
+const p = docSnap.data();
+
+revenue += Number(p.amountPaid || 0);
+
+});
+
+csv += "Total Revenue,KES " + revenue + "\n";
+
+const blob = new Blob([csv],{
+type:"text/csv"
+});
+
+const url = URL.createObjectURL(blob);
+
+const a = document.createElement("a");
+
+a.href = url;
+
+a.download = "Dental_Report.csv";
+
+a.click();
+
+URL.revokeObjectURL(url);
+
+};
+;
+window.toggleStaffPin = function(){
+    const input=document.getElementById("staffPin");
+    if(!input) return;
+    input.type = input.type === "password" ? "text" : "password";
+};
+
+;;
+;
+;
+;
+;
+/* -------------------
+Dashboard
+------------------- */
+
+async function loadDashboard(){
+
+    // Total Patients
+    const patientSnap = await getDocs(collection(db,"patients"));
+    document.getElementById("totalPatients").innerHTML = patientSnap.size;
+
+    // Today's Date
+    const today = new Date().toISOString().split("T")[0];
+
+    // Today's Appointments
+    let todayAppointments = 0;
+    const appointmentSnap = await getDocs(collection(db,"appointments"));
+
+    appointmentSnap.forEach(docSnap=>{
+        const a = docSnap.data();
+        if(a.date === today){
+            todayAppointments++;
+        }
+    });
+
+    document.getElementById("todayAppointments").innerHTML = todayAppointments;
+
+    // Today's Revenue
+    let revenue = 0;
+    const paymentSnap = await getDocs(collection(db,"payments"));
+
+    paymentSnap.forEach(docSnap=>{
+        const p = docSnap.data();
+
+        if(p.date === today){
+            revenue += Number(p.amountPaid || 0);
+        }
+    });
+
+    document.getElementById("todayRevenue").innerHTML =
+    "KES " + revenue.toLocaleString();
+
+    // Low Stock
+    let lowStock = 0;
+    const inventorySnap = await getDocs(collection(db,"inventory"));
+
+    inventorySnap.forEach(docSnap=>{
+        const item = docSnap.data();
+
+        if(Number(item.quantity) <= Number(item.minimumStock)){
+            lowStock++;
+        }
+    });
+
+    document.getElementById("lowStock").innerHTML = lowStock;
+
+}
+window.savePatient = async function(){
+try{
+// Generate Patient Number
+
+const counterRef = doc(db, "counters", "patients");
+
+const counterSnap = await getDoc(counterRef);
+
+let lastNumber = 0;
+
+if(counterSnap.exists()){
+
+    lastNumber = counterSnap.data().lastNumber || 0;
+
+    lastNumber++;
+
+    await updateDoc(counterRef,{
+        lastNumber:lastNumber
+    });
+
+}else{
+
+    lastNumber = 1;
+
+    await setDoc(counterRef,{
+        lastNumber:lastNumber
+    });
+
+}
+
+const patientNumber = "EDL" + String(lastNumber).padStart(6,"0");
+let name = document.getElementById("patientName").value.trim();
+let dob = document.getElementById("patientDob").value;
+let gender = document.getElementById("patientGender").value;
+let idNo = document.getElementById("patientId").value.trim();
+let phone = document.getElementById("patientPhone").value.trim();
+let address = document.getElementById("patientAddress").value.trim();
+let occupation = document.getElementById("patientOccupation").value.trim();
+let kin = document.getElementById("patientKin").value.trim();
+let kinPhone = document.getElementById("patientKinPhone").value.trim();
+let history = document.getElementById("patientHistory").value.trim();
+let allergies = document.getElementById("patientAllergies").value.trim();
+let notes = document.getElementById("patientNotes").value.trim();
+
+if(name=="" || dob=="" || gender==""){
+
+alert("Please complete Full Name, Date of Birth and Gender.");
+
+return;
+
+}
+document.querySelector("#content .btn").disabled = true;
+await addDoc(collection(db,"patients"),{
+
+patientNo: patientNumber,
+status:"Waiting",
+name,
+dob,
+gender,
+idNo,
+phone,
+address,
+occupation,
+kin,
+kinPhone,
+history,
+allergies,
+notes,
+created:serverTimestamp()
+
+});
+
+alert("Patient registered successfully.");
+
+document.getElementById("patientName").value="";
+document.getElementById("patientDob").value="";
+document.getElementById("patientGender").value="";
+document.getElementById("patientId").value="";
+document.getElementById("patientPhone").value="";
+document.getElementById("patientAddress").value="";
+document.getElementById("patientOccupation").value="";
+document.getElementById("patientKin").value="";
+document.getElementById("patientKinPhone").value="";
+document.getElementById("patientHistory").value="";
+document.getElementById("patientAllergies").value="";
+document.getElementById("patientNotes").value="";
+
+drawPatients();
+document.querySelector("#content .btn").disabled = false;
+await loadDashboard();
+
+}catch(error){
+
+console.error(error);
+
+alert("Failed to save patient. Please check your internet connection and try again.");
+document.querySelector("#content .btn").disabled = false;
+}
+
+};
+/* -------------------
+Draw Patients
+------------------- */
+
+window.drawPatients = async function(){
+
+let search = "";
+
+let searchBox = document.getElementById("searchPatient");
+
+if(searchBox){
+
+search = searchBox.value.toLowerCase();
+
+}
+
+let snapshot = await getDocs(collection(db,"patients"));
+
+let html="";
+
+snapshot.forEach(docSnap=>{
+
+let p = docSnap.data();
+
+let text = (
+
+(p.patientNo||"")+
+(p.name||"")+
+(p.phone||"")+
+(p.idNo||"")
+
+).toLowerCase();
+
+if(search!="" && !text.includes(search)){
+
+return;
+
+}
+
+html += `
+
+<div class="card" style="margin-bottom:15px;">
+
+<h3 style="color:#0b7d4b;">
+${p.patientNo}
+</h3>
+
+<b>${p.name}</b>
+
+<hr style="margin:10px 0;">
+
+<table style="width:100%;font-size:14px;">
+
+<tr>
+<td><b>Date of Birth</b></td>
+<td>${p.dob||""}</td>
+</tr>
+
+<tr>
+<td><b>Gender</b></td>
+<td>${p.gender||""}</td>
+</tr>
+
+<tr>
+<td><b>ID Number</b></td>
+<td>${p.idNo||""}</td>
+</tr>
+
+<tr>
+<td><b>Phone</b></td>
+<td>${p.phone||""}</td>
+</tr>
+
+<tr>
+<td><b>Address</b></td>
+<td>${p.address||""}</td>
+</tr>
+
+<tr>
+<td><b>Occupation</b></td>
+<td>${p.occupation||""}</td>
+</tr>
+
+<tr>
+<td><b>Next of Kin</b></td>
+<td>${p.kin||""}</td>
+</tr>
+
+<tr>
+<td><b>Kin Phone</b></td>
+<td>${p.kinPhone||""}</td>
+</tr>
+
+<tr>
+<td><b>Medical Conditions</b></td>
+<td>${p.history||""}</td>
+</tr>
+
+<tr>
+<td><b>Drug Allergies</b></td>
+<td>${p.allergies||""}</td>
+</tr>
+
+<tr>
+<td><b>Notes</b></td>
+<td>${p.notes||""}</td>
+</tr>
+
+</table>
+
+<div style="margin-top:15px;">
+
+<button
+class="btn"
+style="background:#1565c0;"
+onclick="openPatientFile('${docSnap.id}')">
+
+Open File
+
+</button>
+
+<button
+class="btn"
+style="margin-top:10px;"
+onclick="editPatient('${docSnap.id}')">
+
+Edit
+
+</button>
+
+<button
+class="btn"
+style="margin-top:10px;background:#c62828;"
+onclick="deletePatient('${docSnap.id}')">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+if(html==""){
+
+html="<h3>No patients found.</h3>";
+
+}
+
+document.getElementById("patientsList").innerHTML=html;
+
+document.getElementById("totalPatients").innerHTML=snapshot.size;
+
+};
+/* -------------------
+Delete Patient
+------------------- */
+
+;
+
+/* -------------------
+Edit Patient
+------------------- */
+
+let editingPatientId = null;
+
+window.editPatient = async function(id){
+
+editingPatientId = id;
+
+const patientSnap = await getDoc(doc(db,"patients",id));
+
+if(!patientSnap.exists()){
+
+    alert("Patient not found.");
+
+    return;
+
+}
+
+const p = patientSnap.data();
+
+document.getElementById("patientName").value = p.name || "";
+document.getElementById("patientDob").value = p.dob || "";
+document.getElementById("patientGender").value = p.gender || "";
+document.getElementById("patientId").value = p.idNo || "";
+document.getElementById("patientPhone").value = p.phone || "";
+document.getElementById("patientAddress").value = p.address || "";
+document.getElementById("patientOccupation").value = p.occupation || "";
+document.getElementById("patientKin").value = p.kin || "";
+document.getElementById("patientKinPhone").value = p.kinPhone || "";
+document.getElementById("patientHistory").value = p.history || "";
+document.getElementById("patientAllergies").value = p.allergies || "";
+document.getElementById("patientNotes").value = p.notes || "";
+
+const btn = document.querySelector("#content .btn");
+
+btn.innerHTML = "Update Patient";
+
+btn.onclick = updatePatient;
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+};
+/* -------------------
+Update Patient
+------------------- */
+
+window.updatePatient = async function(){
+try{
+if(!editingPatientId){
+
+alert("No patient selected.");
+
+return;
+
+}
+
+let name = document.getElementById("patientName").value.trim();
+let dob = document.getElementById("patientDob").value;
+let gender = document.getElementById("patientGender").value;
+let idNo = document.getElementById("patientId").value.trim();
+let phone = document.getElementById("patientPhone").value.trim();
+let address = document.getElementById("patientAddress").value.trim();
+let occupation = document.getElementById("patientOccupation").value.trim();
+let kin = document.getElementById("patientKin").value.trim();
+let kinPhone = document.getElementById("patientKinPhone").value.trim();
+let history = document.getElementById("patientHistory").value.trim();
+let allergies = document.getElementById("patientAllergies").value.trim();
+let notes = document.getElementById("patientNotes").value.trim();
+document.querySelector("#content .btn").disabled = true;
+await updateDoc(doc(db,"patients",editingPatientId),{
+
+name,
+dob,
+gender,
+idNo,
+phone,
+address,
+occupation,
+kin,
+kinPhone,
+history,
+allergies,
+notes
+
+});
+
+alert("Patient updated successfully.");
+
+editingPatientId = null;
+
+document.getElementById("patientName").value="";
+document.getElementById("patientDob").value="";
+document.getElementById("patientGender").value="";
+document.getElementById("patientId").value="";
+document.getElementById("patientPhone").value="";
+document.getElementById("patientAddress").value="";
+document.getElementById("patientOccupation").value="";
+document.getElementById("patientKin").value="";
+document.getElementById("patientKinPhone").value="";
+document.getElementById("patientHistory").value="";
+document.getElementById("patientAllergies").value="";
+document.getElementById("patientNotes").value="";
+
+const btn = document.querySelector("#content .btn");
+
+btn.innerHTML="Save Patient";
+
+btn.onclick=savePatient;
+document.querySelector("#content .btn").disabled = false;
+drawPatients();
+
+await loadDashboard();
+
+}catch(error){
+
+console.error(error);
+
+alert("Failed to update patient. Please check your internet connection and try again.");
+document.querySelector("#content .btn").disabled = false;
+}
+
+};
+;
+window.showPatientInfo = async function(id){
+
+const patientRef = doc(db,"patients",id);
+
+const patientSnap = await getDoc(patientRef);
+
+if(!patientSnap.exists()) return;
+
+const p = patientSnap.data();
+
+document.getElementById("patientFileContent").innerHTML = `
+
+<div class="card">
+
+<h3>Patient Information</h3>
+
+<table style="width:100%;margin-top:15px;font-size:15px;">
+
+<tr><td><b>Patient Number</b></td><td>${p.patientNo}</td></tr>
+<tr><td><b>Full Name</b></td><td>${p.name}</td></tr>
+<tr><td><b>Date of Birth</b></td><td>${p.dob}</td></tr>
+<tr><td><b>Gender</b></td><td>${p.gender}</td></tr>
+<tr><td><b>ID Number</b></td><td>${p.idNo}</td></tr>
+<tr><td><b>Phone</b></td><td>${p.phone}</td></tr>
+<tr><td><b>Address</b></td><td>${p.address}</td></tr>
+<tr><td><b>Occupation</b></td><td>${p.occupation}</td></tr>
+<tr><td><b>Next of Kin</b></td><td>${p.kin}</td></tr>
+<tr><td><b>Kin Phone</b></td><td>${p.kinPhone}</td></tr>
+<tr><td><b>Medical Conditions</b></td><td>${p.history}</td></tr>
+<tr><td><b>Drug Allergies</b></td><td>${p.allergies}</td></tr>
+<tr><td><b>Notes</b></td><td>${p.notes}</td></tr>
+
+</table>
+
+</div>
+
+`;
+
+};
+window.showAppointments = async function(id){
+
+const q = query(
+collection(db,"appointments"),
+where("patientId","==",id),
+orderBy("created","desc")
+);
+
+const snapshot = await getDocs(q);
+
+let html = `
+
+<div class="card">
+
+<h2>Appointments</h2>
+
+<button
+class="btn"
+style="margin-bottom:20px;"
+onclick="addAppointment('${id}')">
+
+Add Appointment
+
+</button>
+
+`;
+
+if(snapshot.empty){
+
+html += "<p>No appointments have been recorded for this patient.</p>";
+
+}else{
+
+snapshot.forEach(docSnap=>{
+
+const a = docSnap.data();
+
+html += `
+
+<div style="border:1px solid #ddd;border-radius:10px;padding:15px;margin-bottom:15px;">
+
+<b>Date:</b> ${a.date}<br>
+
+<b>Time:</b> ${a.time}<br>
+
+<b>Reason:</b> ${a.reason}<br>
+
+<b>Status:</b> ${a.status}<br>
+
+<b>Notes:</b> ${a.notes || ""}
+
+</div>
+
+`;
+
+});
+
+}
+
+html += "</div>";
+
+document.getElementById("patientFileContent").innerHTML = html;
+
+};
+window.addAppointment = function(id){
+
+document.getElementById("patientFileContent").innerHTML = `
+
+<div class="card">
+
+<h2>New Appointment</h2>
+
+<input
+id="appointmentDate"
+class="input"
+type="date"
+value="${new Date().toISOString().split('T')[0]}">
+
+<input id="appointmentTime" class="input" type="time">
+
+<select id="appointmentReason" class="input">
+    <option value="">Select Reason for Visit</option>
+    <option>Consultation</option>
+    <option>Toothache</option>
+    <option>Extraction</option>
+    <option>Filling</option>
+    <option>Cleaning</option>
+    <option>Root Canal</option>
+    <option>Crown</option>
+    <option>Denture</option>
+    <option>Review</option>
+    <option>Emergency</option>
+    <option>Other</option>
+</select>
+
+<textarea id="appointmentNotes"
+class="input"
+placeholder="Notes"></textarea>
+
+<button class="btn"
+onclick="saveAppointment('${id}')">
+
+Save Appointment
+
+</button>
+
+</div>
+
+`;
+
+};
+window.saveAppointment = async function(patientId){
+
+let date = document.getElementById("appointmentDate").value;
+let time = document.getElementById("appointmentTime").value;
+let reason = document.getElementById("appointmentReason").value.trim();
+let notes = document.getElementById("appointmentNotes").value.trim();
+
+if(date=="" || time=="" || reason==""){
+    alert("Please complete Date, Time and Reason.");
+    return;
+}
+try{
+await addDoc(collection(db,"appointments"),{
+
+patientId: patientId,
+date: date,
+time: time,
+reason: reason,
+notes: notes,
+status: "Booked",
+created: serverTimestamp()
+
+});
+
+alert("Appointment saved successfully.");
+
+await loadDashboard();
+
+showAppointments(patientId);
+
+}catch(error){
+
+console.error(error);
+
+alert("Failed to save appointment. Please check your internet connection and try again.");
+
+}
+
+};
+window.showDentalChart = async function(id){
+const q = query(
+collection(db,"dentalChart"),
+where("patientId","==",id)
+);
+
+const snapshot = await getDocs(q);
+
+let savedTeeth = {};
+
+snapshot.forEach(docSnap=>{
+
+const t = docSnap.data();
+
+savedTeeth[t.tooth] = t;
+
+});
+let teeth = "";
+
+for(let i=1;i<=32;i++){
+
+let color = "white";
+
+if(savedTeeth[i]){
+
+switch(savedTeeth[i].condition){
+
+case "Caries":
+color = "#ff5252";
+break;
+
+case "Filling":
+color = "#64b5f6";
+break;
+
+case "Missing":
+color = "#9e9e9e";
+break;
+
+case "Root Canal":
+color = "#ba68c8";
+break;
+
+case "Crown":
+color = "#ffd54f";
+break;
+
+case "Scaling":
+color = "#81c784";
+break;
+
+case "Normal":
+color = "#a5d6a7";
+break;
+
+}
+
+}
+
+teeth += `
+<button
+style="
+width:55px;
+height:55px;
+border-radius:10px;
+border:1px solid #ccc;
+background:${color};
+font-weight:bold;
+cursor:pointer;"
+onclick="selectTooth('${id}',${i})">
+
+${i}
+
+</button>
+`;
+
+}
+
+document.getElementById("patientFileContent").innerHTML = `
+
+<div class="card">
+
+<h2>Dental Chart</h2>
+
+<p style="margin-bottom:20px;">
+Tap a tooth to view or update its condition.
+</p>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(8,1fr);
+gap:10px;">
+
+${teeth}
+
+</div>
+
+<div id="selectedTooth" style="margin-top:20px;"></div>
+
+</div>
+
+`;
+
+};
+window.selectTooth = async function(patientId, tooth){
+
+const toothId = patientId + "_" + tooth;
+
+let condition = "";
+let notes = "";
+
+const toothSnap = await getDoc(doc(db,"dentalChart",toothId));
+
+if(toothSnap.exists()){
+
+    condition = toothSnap.data().condition || "";
+    notes = toothSnap.data().notes || "";
+
+}
+
+document.getElementById("selectedTooth").innerHTML = `
+
+<div class="card" style="margin-top:20px;">
+
+<h3>Tooth ${tooth}</h3>
+
+<select id="toothCondition" class="input">
+
+<option value="">Select Condition</option>
+
+<option ${condition=="Caries"?"selected":""}>Caries</option>
+<option ${condition=="Filling"?"selected":""}>Filling</option>
+<option ${condition=="Missing"?"selected":""}>Missing</option>
+<option ${condition=="Missing"?"selected":""}>Missing</option>
+<option ${condition=="Root Canal"?"selected":""}>Root Canal</option>
+<option ${condition=="Crown"?"selected":""}>Crown</option>
+<option ${condition=="Scaling"?"selected":""}>Scaling</option>
+<option ${condition=="Normal"?"selected":""}>Normal</option>
+
+</select>
+
+<textarea
+id="toothNotes"
+class="input"
+placeholder="Clinical Notes">${notes}</textarea>
+
+<button
+class="btn"
+onclick="saveTooth('${patientId}',${tooth})">
+
+Save Tooth Record
+
+</button>
+
+</div>
+
+`;
+
+};
+window.saveTooth = async function(patientId, tooth){
+
+let condition = document.getElementById("toothCondition").value;
+let notes = document.getElementById("toothNotes").value.trim();
+
+if(condition==""){
+
+    alert("Please select a tooth condition.");
+
+    return;
+
+}
+
+const toothId = patientId + "_" + tooth;
+
+await setDoc(doc(db,"dentalChart",toothId),{
+
+    patientId: patientId,
+    tooth: tooth,
+    condition: condition,
+    notes: notes,
+    updated: serverTimestamp()
+
+});
+
+alert("Tooth record saved successfully.");
+
+showDentalChart(patientId);
+
+};
+window.showExaminations = async function(patientId){
+
+const q = query(
+collection(db,"examinations"),
+where("patientId","==",patientId)
+);
+
+const snapshot = await getDocs(q);
+
+let history = "";
+
+snapshot.forEach(docSnap=>{
+
+const e = docSnap.data();
+
+history += `
+
+<div style="
+border:1px solid #ddd;
+border-radius:10px;
+padding:15px;
+margin-top:15px;
+background:#fafafa;">
+
+<b>Chief Complaint:</b> ${e.chiefComplaint}<br>
+<b>Diagnosis:</b> ${e.diagnosis}<br>
+<b>Treatment Plan:</b> ${e.treatmentPlan || ""}<br>
+<b>Dentist:</b> ${e.dentist || ""}
+
+</div>
+
+`;
+
+});
+
+if(history==""){
+
+history="<p>No previous examinations.</p>";
+
+}
+
+document.getElementById("patientFileContent").innerHTML = `
+
+<div class="card">
+
+<h2>Dental Examination</h2>
+
+<input
+id="chiefComplaint"
+class="input"
+placeholder="Chief Complaint">
+
+<textarea
+id="historyPresent"
+class="input"
+placeholder="History of Present Illness"></textarea>
+
+<textarea
+id="extraOral"
+class="input"
+placeholder="Extra-Oral Examination"></textarea>
+
+<textarea
+id="intraOral"
+class="input"
+placeholder="Intra-Oral Examination"></textarea>
+
+<textarea
+id="diagnosis"
+class="input"
+placeholder="Diagnosis"></textarea>
+
+<textarea
+id="treatmentPlan"
+class="input"
+placeholder="Treatment Plan"></textarea>
+
+<input
+id="examDentist"
+class="input"
+placeholder="Dentist Name"
+value="${currentUser}"
+readonly>
+
+<button
+class="btn"
+onclick="saveExamination('${patientId}')">
+
+Save Examination
+
+</button>
+
+<hr style="margin:25px 0;">
+
+<h3>Previous Examinations</h3>
+
+${history}
+
+</div>
+
+`;
+
+};
+window.saveExamination = async function(patientId){
+
+let chiefComplaint = document.getElementById("chiefComplaint").value.trim();
+let historyPresent = document.getElementById("historyPresent").value.trim();
+let extraOral = document.getElementById("extraOral").value.trim();
+let intraOral = document.getElementById("intraOral").value.trim();
+let diagnosis = document.getElementById("diagnosis").value.trim();
+let treatmentPlan = document.getElementById("treatmentPlan").value.trim();
+let dentist = document.getElementById("examDentist").value.trim();
+
+if(chiefComplaint=="" || diagnosis==""){
+
+    alert("Please enter the Chief Complaint and Diagnosis.");
+
+    return;
+
+}
+
+await addDoc(collection(db,"examinations"),{
+
+    patientId,
+    chiefComplaint,
+    historyPresent,
+    extraOral,
+    intraOral,
+    diagnosis,
+    treatmentPlan,
+    dentist,
+    created: serverTimestamp()
+
+});
+await updateDoc(
+    doc(db,"patients",patientId),
+    {
+        status:"Examined"
+    }
+);
+alert("Examination saved successfully.");
+
+showExaminations(patientId);
+
+};
+window.showTreatments = async function(patientId){
+
+const q = query(
+collection(db,"treatments"),
+where("patientId","==",patientId)
+);
+
+const snapshot = await getDocs(q);
+
+let history = "";
+
+snapshot.forEach(docSnap=>{
+
+const t = docSnap.data();
+
+history += `
+
+<div style="
+border:1px solid #ddd;
+border-radius:10px;
+padding:15px;
+margin-top:15px;
+background:#fafafa;">
+
+<b>Date:</b> ${t.date}<br>
+<b>Tooth:</b> ${t.tooth}<br>
+<b>Procedure:</b> ${t.procedure}<br>
+<b>Cost:</b> KES ${t.cost}<br>
+<b>Status:</b> ${t.status}
+
+</div>
+
+`;
+
+});
+
+if(history==""){
+
+history="<p>No treatment records found.</p>";
+
+}
+
+let teethOptions="";
+
+for(let i=1;i<=32;i++){
+
+teethOptions += `<option>${i}</option>`;
+
+}
+
+document.getElementById("patientFileContent").innerHTML = `
+
+<div class="card">
+
+<h2>Treatment Record</h2>
+
+<input
+id="treatmentDate"
+class="input"
+type="date"
+value="${new Date().toISOString().split('T')[0]}">
+
+<select
+id="treatmentTooth"
+class="input">
+
+<option value="">Select Tooth</option>
+
+${teethOptions}
+
+</select>
+
+<select
+id="treatmentProcedure"
+class="input"
+onchange="loadTreatmentPrice()">
+
+<option value="">Select Procedure</option>
+
+<option>Consultation</option>
+<option>Filling</option>
+<option>Extraction</option>
+<option>Root Canal Treatment</option>
+<option>Scaling & Polishing</option>
+<option>Crown</option>
+<option>Bridge</option>
+<option>Denture</option>
+<option>Implant</option>
+<option>Emergency Treatment</option>
+<option>Other</option>
+
+</select>
+
+<input
+id="treatmentCost"
+class="input"
+type="number"
+placeholder="Treatment Cost"
+readonly>
+
+<select
+id="treatmentStatus"
+class="input">
+
+<option>Completed</option>
+<option>Planned</option>
+<option>In Progress</option>
+<option>Cancelled</option>
+
+</select>
+
+<textarea
+id="treatmentNotes"
+class="input"
+placeholder="Clinical Notes"></textarea>
+
+<input
+id="nextVisitDate"
+type="date"
+class="input">
+
+<input
+id="nextVisitReason"
+class="input"
+placeholder="Reason for next visit">
+
+<button
+class="btn"
+onclick="saveTreatment('${patientId}')">
+
+Save Treatment
+
+</button>
+
+<hr style="margin:25px 0;">
+
+<h3>Treatment History</h3>
+
+${history}
+
+</div>
+
+`;
+
+};
+;
+;
+;
+window.showPrescriptions = async function(patientId){
+
+const q = query(
+collection(db,"prescriptions"),
+where("patientId","==",patientId)
+);
+
+const snapshot = await getDocs(q);
+
+let history = "";
+
+snapshot.forEach(docSnap=>{
+
+const p = docSnap.data();
+
+history += `
+
+<div style="
+border:1px solid #ddd;
+border-radius:10px;
+padding:15px;
+margin-top:15px;
+background:#fafafa;">
+
+<b>Medicine:</b> ${p.medicine}<br>
+<b>Strength:</b> ${p.strength}<br>
+<b>Dosage:</b> ${p.dosage}<br>
+<b>Duration:</b> ${p.duration}<br>
+<b>Instructions:</b> ${p.instructions}
+
+</div>
+
+`;
+
+});
+
+if(history==""){
+
+history = "<p>No prescriptions recorded.</p>";
+
+}
+const container = document.getElementById("patientFileContent");
+
+container.innerHTML = `
+
+<div class="card">
+
+<h2>Prescription</h2>
+
+<input
+id="medicine"
+class="input"
+placeholder="Medicine">
+
+<input
+id="strength"
+class="input"
+placeholder="Strength (e.g. 500mg)">
+
+<input
+id="dosage"
+class="input"
+placeholder="Dosage">
+
+<input
+id="duration"
+class="input"
+placeholder="Duration">
+
+<textarea
+id="instructions"
+class="input"
+placeholder="Instructions"></textarea>
+
+<button
+class="btn"
+onclick="savePrescription('${patientId}')">
+
+Save Prescription
+
+</button>
+
+<hr style="margin:25px 0;">
+
+<h3>Prescription History</h3>
+
+${history}
+
+</div>
+
+`;
+
+};
+window.savePrescription = async function(patientId){
+
+let medicine = document.getElementById("medicine").value.trim();
+let strength = document.getElementById("strength").value.trim();
+let dosage = document.getElementById("dosage").value.trim();
+let duration = document.getElementById("duration").value.trim();
+let instructions = document.getElementById("instructions").value.trim();
+
+if(medicine==""){
+
+    alert("Please enter the medicine name.");
+
+    return;
+
+}
+
+await addDoc(collection(db,"prescriptions"),{
+
+    patientId,
+    medicine,
+    strength,
+    dosage,
+    duration,
+    instructions,
+    created: serverTimestamp()
+
+});
+
+alert("Prescription saved successfully.");
+
+showPrescriptions(patientId);
+
+};
+window.showTreatmentPrices = async function(){
+
+const snapshot = await getDocs(collection(db,"treatmentPrices"));
+
+let html = `
+
+<div class="card">
+
+<h2>Treatment Price List</h2>
+
+<input
+id="priceProcedure"
+class="input"
+placeholder="Procedure">
+
+<input
+id="priceAmount"
+class="input"
+type="number"
+placeholder="Price (KES)">
+
+<button
+class="btn"
+onclick="saveTreatmentPrice()">
+
+Save Price
+
+</button>
+
+<hr style="margin:20px 0;">
+
+`;
+
+snapshot.forEach(docSnap=>{
+
+const p = docSnap.data();
+
+html += `
+
+<div style="
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+margin-bottom:10px;">
+
+<b>${p.procedure}</b>
+
+<span style="float:right;">
+KES ${Number(p.price).toLocaleString()}
+</span>
+
+</div>
+
+`;
+
+});
+
+html += `</div>`;
+
+document.getElementById("content").innerHTML = html;
+
+};
+;
+window.loadTreatmentPrice = async function(){
+
+let procedure = document.getElementById("treatmentProcedure").value;
+
+if(procedure=="") return;
+
+const q = query(
+collection(db,"treatmentPrices"),
+where("procedure","==",procedure)
+);
+
+const snapshot = await getDocs(q);
+
+if(snapshot.empty){
+
+    alert("This procedure has no price. Please ask the administrator to set a price.");
+
+    document.getElementById("treatmentCost").value = "";
+
+    return;
+
+}
+
+const docSnap = snapshot.docs[0];
+
+document.getElementById("treatmentCost").value =
+docSnap.data().price;
+
+};
+;
+;
+window.showInventory = async function(){
+if(!requireRole(["Administrator"])) return;
+
+const snapshot = await getDocs(collection(db,"inventory"));
+
+let html = `
+
+<div class="card">
+
+<h2>Inventory Management</h2>
+
+<button
+class="btn"
+style="background:#3949ab;margin-bottom:15px;"
+onclick="showProcedureMaterials()">
+
+Procedure Materials
+
+</button>
+
+<input id="itemName" class="input" placeholder="Item Name">
+
+<input id="itemCategory" class="input" placeholder="Category">
+
+<input id="itemSupplier" class="input" placeholder="Supplier">
+
+<input id="batchNumber" class="input" placeholder="Batch Number">
+
+<input type="date" id="expiryDate" class="input">
+
+<select id="itemUnit" class="input">
+<option>Piece</option>
+<option>Box</option>
+<option>Bottle</option>
+<option>Tube</option>
+<option>Pack</option>
+</select>
+
+<input id="itemQty" type="number" class="input" placeholder="Quantity">
+
+<input id="minimumStock" type="number" class="input" placeholder="Minimum Stock">
+
+<input id="buyPrice" type="number" class="input" placeholder="Purchase Price">
+
+<input id="sellPrice" type="number" class="input" placeholder="Selling Price">
+
+<button
+id="saveInventoryBtn"
+class="btn"
+onclick="saveInventoryItem()">
+Save Item
+</button>
+<hr style="margin:20px 0;">
+
+<input
+id="searchInventory"
+class="input"
+placeholder="Search item..."
+onkeyup="drawInventory()">
+
+<button
+class="btn"
+style="background:#6a1b9a;margin-bottom:15px;"
+onclick="showStockHistory()">
+
+Stock History
+
+</button>
+
+<div id="inventoryList"></div>
+
+</div>
+
+`;
+
+document.getElementById("content").innerHTML = html;
+
+drawInventory();
+
+}
+window.showProcedureMaterials = async function(){
+
+document.getElementById("content").innerHTML = `
+
+<div class="card">
+
+<h2>Procedure Materials</h2>
+
+<label>Procedure</label>
+<select id="pmProcedure" class="input">
+<option value="">Select Procedure</option>
+</select>
+
+<label>Material</label>
+<select id="pmItem" class="input">
+<option value="">Select Material</option>
+</select>
+
+<label>Quantity Used</label>
+<input
+id="pmQty"
+type="number"
+class="input"
+value="1"
+min="1">
+
+<button
+class="btn"
+onclick="saveProcedureMaterial()">
+
+Save Material
+
+</button>
+
+<hr style="margin:20px 0;">
+
+<div id="procedureMaterialList"></div>
+
+<button
+class="btn"
+style="background:#1565c0;margin-top:20px;"
+onclick="showInventory()">
+
+← Back to Inventory
+
+</button>
+
+</div>
+
+`;
+
+await loadProceduresForMaterials();
+await loadProcedureMaterialsItems();
+drawProcedureMaterials();
+
+};
+window.loadProceduresForMaterials = async function(){
+
+const select = document.getElementById("pmProcedure");
+if(!select) return;
+
+select.innerHTML =
+'<option value="">Select Procedure</option>';
+
+const snapshot = await getDocs(collection(db,"treatmentPrices"));
+
+snapshot.forEach(docSnap=>{
+
+const p = docSnap.data();
+
+select.innerHTML += `
+<option value="${p.procedure}">
+${p.procedure}
+</option>
+`;
+
+});
+
+}
+window.loadProcedureMaterialsItems = async function(){
+
+const select = document.getElementById("pmItem");
+
+if(!select) return;
+
+select.innerHTML =
+'<option value="">Select Material</option>';
+
+const snapshot = await getDocs(collection(db,"inventory"));
+
+snapshot.forEach(docSnap=>{
+
+const item = docSnap.data();
+
+select.innerHTML += `
+<option value="${item.itemName}">
+${item.itemName}
+</option>
+`;
+
+});
+
+}
+window.drawProcedureMaterials = async function(){
+
+const holder = document.getElementById("procedureMaterialList");
+if(!holder) return;
+
+const snapshot = await getDocs(collection(db,"procedureMaterials"));
+
+let html = "";
+
+snapshot.forEach(docSnap=>{
+
+const m = docSnap.data();
+const id = docSnap.id;
+
+html += `
+
+<div class="card" style="margin-top:10px;">
+
+<b>${m.procedure}</b><br>
+
+${m.item} × ${m.qty}<br><br>
+
+<button
+class="btn"
+style="background:#d32f2f;"
+onclick="deleteProcedureMaterial('${id}')">
+
+Delete
+
+</button>
+
+</div>
+
+`;
+
+});
+
+holder.innerHTML = html || "<p>No materials assigned.</p>";
+
+}
+window.saveProcedureMaterial = async function(){
+if(!requireRole(["Administrator"])) return;
+
+const procedure =
+document.getElementById("pmProcedure").value;
+
+const item =
+document.getElementById("pmItem").value;
+
+const qty =
+Number(document.getElementById("pmQty").value);
+
+if(!procedure || !item || qty <= 0){
+    alert("Complete all fields.");
+    return;
+}
+
+// Check whether this procedure already has this material
+const q = query(
+    collection(db,"procedureMaterials"),
+    where("procedure","==",procedure),
+    where("item","==",item)
+);
+
+const snapshot = await getDocs(q);
+
+if(!snapshot.empty){
+
+    // Update existing record instead of creating another
+    const docId = snapshot.docs[0].id;
+
+    await updateDoc(
+        doc(db,"procedureMaterials",docId),
+        {
+            qty: qty
+        }
+    );
+
+    alert("Material updated.");
+
+}else{
+
+    // Create new record
+    await addDoc(collection(db,"procedureMaterials"),{
+        procedure,
+        item,
+        qty
+    });
+
+    alert("Material assigned.");
+}
+
+drawProcedureMaterials();
+
+}
+window.deleteProcedureMaterial = async function(id){
+if(!requireRole(["Administrator"])) return;
+
+if(!confirm("Delete this material assignment?")) return;
+
+await deleteDoc(doc(db,"procedureMaterials",id));
+
+drawProcedureMaterials();
+
+}
+window.loadMaterialProcedures = async function(){
+
+const snapshot = await getDocs(collection(db,"treatmentPrices"));
+
+const select =
+document.getElementById("materialProcedure");
+
+if(!select) return;
+
+select.innerHTML =
+'<option value="">Select Treatment</option>';
+
+snapshot.forEach(docSnap=>{
+
+const p = docSnap.data();
+
+select.innerHTML +=
+`<option value="${p.procedure}">
+${p.procedure}
+</option>`;
+
+});
+
+}
+window.loadInventoryMaterialItems = async function(){
+
+const snapshot = await getDocs(collection(db,"inventory"));
+
+const select =
+document.getElementById("materialItem");
+
+if(!select) return;
+
+select.innerHTML =
+'<option value="">Select Inventory Item</option>';
+
+snapshot.forEach(docSnap=>{
+
+const item = docSnap.data();
+
+select.innerHTML +=
+`<option value="${item.itemName}">
+${item.itemName}
+</option>`;
+
+});
+
+}
+window.drawTreatmentMaterials = async function(){
+
+const snapshot = await getDocs(collection(db,"procedureMaterials"));
+
+let html = "";
+
+snapshot.forEach(docSnap=>{
+
+const m = docSnap.data();
+
+html += `
+
+<div class="card" style="margin-top:10px;">
+
+<b>${m.procedure}</b><br>
+
+${m.item} × ${m.qty}
+
+</div>
+
+`;
+
+});
+
+document.getElementById("materialsList").innerHTML = html;
+
+}
+window.drawInventory = async function(){
+
+const snapshot = await getDocs(collection(db,"inventory"));
+
+let search=document.getElementById("searchInventory").value.toLowerCase();
+
+let html="";
+
+snapshot.forEach(docSnap=>{
+
+const i=docSnap.data();
+
+let text=(i.itemName+" "+i.itemCategory+" "+i.itemSupplier).toLowerCase();
+
+if(search!="" && !text.includes(search)) return;
+
+let colour="#2e7d32";
+let status="In Stock";
+
+if(i.quantity<=0){
+
+colour="#c62828";
+status="Out of Stock";
+
+}else if(i.quantity<=i.minimumStock){
+
+colour="#ef6c00";
+status="Low Stock";
+
+}
+
+html+=`
+
+<div class="card" style="margin-top:15px;">
+
+<h3>${i.itemName}</h3>
+
+<table style="width:100%;">
+
+<tr><td>Category</td><td>${i.itemCategory}</td></tr>
+<tr><td>Supplier</td><td>${i.itemSupplier}</td></tr>
+<tr><td>Batch</td><td>${i.batchNumber}</td></tr>
+<tr><td>Expiry</td><td>${i.expiryDate}</td></tr>
+<tr><td>Quantity</td><td>${i.quantity} ${i.itemUnit}</td></tr>
+<tr><td>Buy Price</td><td>KES ${i.buyPrice}</td></tr>
+<tr><td>Sell Price</td><td>KES ${i.sellPrice}</td></tr>
+
+</table>
+
+<p style="margin-top:10px;color:${colour};font-weight:bold;">
+${status}
+</p>
+
+<button class="btn" style="background:#1565c0;margin-top:10px;" onclick="editInventory('${docSnap.id}')">
+Edit
+</button>
+
+<button class="btn" style="background:#2e7d32;margin-top:10px;" onclick="stockIn('${docSnap.id}')">
+Stock In
+</button>
+
+<button class="btn" style="background:#ef6c00;margin-top:10px;" onclick="stockOut('${docSnap.id}')">
+Stock Out
+</button>
+
+<button class="btn" style="background:#c62828;margin-top:10px;" onclick="deleteInventory('${docSnap.id}')">
+Delete
+</button>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("inventoryList").innerHTML=html;
+
+}
+window.saveInventoryItem = async function(){
+
+let itemName = document.getElementById("itemName").value.trim();
+let itemCategory = document.getElementById("itemCategory").value.trim();
+let itemSupplier = document.getElementById("itemSupplier").value.trim();
+let batchNumber = document.getElementById("batchNumber").value.trim();
+let expiryDate = document.getElementById("expiryDate").value;
+let itemUnit = document.getElementById("itemUnit").value;
+let itemQty = Number(document.getElementById("itemQty").value || 0);
+let minimumStock = Number(document.getElementById("minimumStock").value || 0);
+let buyPrice = Number(document.getElementById("buyPrice").value || 0);
+let sellPrice = Number(document.getElementById("sellPrice").value || 0);
+
+if(itemName==""){
+    alert("Enter Item Name");
+    return;
+}
+const existingQuery = query(
+    collection(db,"inventory"),
+    where("itemName","==",itemName.trim())
+);
+
+const existingSnap = await getDocs(existingQuery);
+
+if(!existingSnap.empty){
+
+    alert("An inventory item with this name already exists.");
+
+    return;
+
+}
+await addDoc(collection(db,"inventory"),{
+    itemName,
+    itemCategory,
+    itemSupplier,
+    batchNumber,
+    expiryDate,
+    itemUnit,
+    quantity:itemQty,
+    minimumStock,
+    buyPrice,
+    sellPrice,
+    created:serverTimestamp()
+});
+
+alert("Item Saved");
+
+showInventory();
+
+};
+
+window.editInventory = async function(id){
+
+const snap = await getDoc(doc(db,"inventory",id));
+
+const item = snap.data();
+
+document.getElementById("itemName").value = item.itemName;
+document.getElementById("itemCategory").value = item.itemCategory;
+document.getElementById("itemSupplier").value = item.itemSupplier;
+document.getElementById("batchNumber").value = item.batchNumber;
+document.getElementById("expiryDate").value = item.expiryDate;
+document.getElementById("itemUnit").value = item.itemUnit;
+document.getElementById("itemQty").value = item.quantity;
+document.getElementById("minimumStock").value = item.minimumStock;
+document.getElementById("buyPrice").value = item.buyPrice;
+document.getElementById("sellPrice").value = item.sellPrice;
+
+const btn = document.getElementById("saveInventoryBtn");
+
+btn.innerHTML = "Update Item";
+
+btn.onclick = async function(){
+
+await updateDoc(doc(db,"inventory",id),{
+
+itemName:document.getElementById("itemName").value.trim(),
+itemCategory:document.getElementById("itemCategory").value.trim(),
+itemSupplier:document.getElementById("itemSupplier").value.trim(),
+batchNumber:document.getElementById("batchNumber").value.trim(),
+expiryDate:document.getElementById("expiryDate").value,
+itemUnit:document.getElementById("itemUnit").value,
+quantity:Number(document.getElementById("itemQty").value),
+minimumStock:Number(document.getElementById("minimumStock").value),
+buyPrice:Number(document.getElementById("buyPrice").value),
+sellPrice:Number(document.getElementById("sellPrice").value)
+
+});
+
+alert("Item updated successfully.");
+
+showInventory();
+
+};
+
+window.scrollTo(0,0);
+
+};
+
+window.stockIn = async function(id){
+if(!requireRole(["Administrator"])) return;
+
+let qty = Number(prompt("Quantity received"));
+
+if(!qty || qty<=0) return;
+
+const ref = doc(db,"inventory",id);
+
+const snap = await getDoc(ref);
+
+const item = snap.data();
+
+let newQty = item.quantity + qty;
+
+await updateDoc(ref,{
+    quantity:newQty
+});
+
+await addDoc(collection(db,"stockHistory"),{
+
+item:item.itemName,
+type:"Stock In",
+quantity:qty,
+balance:newQty,
+date:new Date().toLocaleString(),
+created:serverTimestamp()
+
+});
+
+drawInventory();
+
+await loadDashboard();
+
+alert("Stock added successfully.");
+
+}
+window.stockOut = async function(id){
+if(!requireRole(["Administrator"])) return;
+
+let qty = Number(prompt("Quantity used"));
+
+if(!qty || qty<=0) return;
+
+const ref = doc(db,"inventory",id);
+
+const snap = await getDoc(ref);
+
+const item = snap.data();
+
+if(qty>item.quantity){
+
+alert("Not enough stock.");
+
+return;
+
+}
+
+let newQty = item.quantity - qty;
+
+await updateDoc(ref,{
+    quantity:newQty
+});
+
+await addDoc(collection(db,"stockHistory"),{
+
+item:item.itemName,
+type:"Stock Out",
+quantity:qty,
+balance:newQty,
+date:new Date().toLocaleString(),
+created:serverTimestamp()
+
+});
+
+drawInventory();
+
+await loadDashboard();
+
+alert("Stock deducted.");
+
+}
+window.deleteInventory = async function(id){
+if(!requireRole(["Administrator"])) return;
+
+    if(!confirm("Delete this inventory item?")) return;
+
+    await deleteDoc(doc(db,"inventory",id));
+
+    alert("Inventory item deleted successfully.");
+
+    drawInventory();
+
+    await loadDashboard();
+
+}
+window.showStockHistory = async function(){
+if(!requireRole(["Administrator"])) return;
+
+const snapshot = await getDocs(collection(db,"stockHistory"));
+
+let html = `
+
+<div class="card">
+
+<h2>Stock Movement History</h2>
+
+<button
+class="btn"
+style="background:#1565c0;margin-bottom:20px;"
+onclick="showInventory()">
+
+← Back to Inventory
+
+</button>
+
+<table style="width:100%;border-collapse:collapse;">
+
+<tr style="background:#eeeeee;font-weight:bold;">
+
+<th>Date</th>
+<th>Item</th>
+<th>Type</th>
+<th>Qty</th>
+<th>Balance</th>
+
+</tr>
+
+`;
+
+snapshot.forEach(docSnap=>{
+
+const h = docSnap.data();
+
+let colour = h.type=="Stock In" ? "#2e7d32" : "#c62828";
+
+html += `
+
+<tr>
+
+<td>${h.date}</td>
+
+<td>${h.item}</td>
+
+<td style="color:${colour};font-weight:bold;">
+${h.type}
+</td>
+
+<td>${h.quantity}</td>
+
+<td>${h.balance}</td>
+
+</tr>
+
+`;
+
+});
+
+html += `
+
+</table>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("content").innerHTML = html;
+
+}
+window.showprocedureMaterials = async function(){
+
+document.getElementById("content").innerHTML = `
+
+<div class="card">
+
+<h2>Procedure Materials</h2>
+
+<label>Procedure</label>
+<select id="mapProcedure" class="input">
+<option value="">Select Procedure</option>
+</select>
+
+<label>Material</label>
+<select id="mapItem" class="input">
+<option value="">Select Material</option>
+</select>
+
+<label>Quantity Used</label>
+<input
+id="mapQty"
+type="number"
+class="input"
+value="1"
+min="1">
+
+<button
+class="btn"
+onclick="saveprocedureMaterials()">
+
+Assign Material
+
+</button>
+
+<hr style="margin:20px 0;">
+
+<div id="mappingList"></div>
+
+<button
+class="btn"
+style="background:#1565c0;margin-top:20px;"
+onclick="showInventory()">
+
+← Back to Inventory
+
+</button>
+
+</div>
+
+`;
+
+await loadTreatmentProcedures();
+await loadInventoryItems();
+drawprocedureMaterials();
+
+}
+window.drawprocedureMaterials = async function(){
+
+const snapshot = await getDocs(collection(db,"procedureMaterials"));
+
+let html = "";
+
+snapshot.forEach(docSnap=>{
+
+const m = docSnap.data();
+
+html += `
+
+<div class="card" style="margin-top:15px;">
+
+<b>${m.procedure}</b><br>
+
+${m.item} × ${m.qty}
+
+</div>
+
+`;
+
+});
+
+document.getElementById("mappingList").innerHTML = html;
+
+}
+window.saveprocedureMaterials = async function(){
+
+const procedure =
+document.getElementById("mapProcedure").value;
+
+const item =
+document.getElementById("mapItem").value;
+
+const quantity =
+Number(document.getElementById("mapQty").value);
+
+if(procedure=="" || item==""){
+
+    alert("Select both Procedure and Material.");
+
+    return;
+
+}
+
+await addDoc(collection(db,"procedureMaterials"),{
+
+    procedure,
+    item,
+    quantity,
+    created:serverTimestamp()
+
+});
+
+alert("Material assigned successfully.");
+
+drawprocedureMaterials();
+
+}
+window.loadInventoryItems = async function(){
+
+const snapshot = await getDocs(collection(db,"inventory"));
+
+const select = document.getElementById("mapItem");
+
+if(!select) return;
+
+select.innerHTML =
+'<option value="">Select Material</option>';
+
+snapshot.forEach(docSnap=>{
+
+const item = docSnap.data();
+
+select.innerHTML += `
+<option value="${item.itemName}">
+${item.itemName}
+</option>`;
+
+});
+
+}
+window.loadTreatmentProcedures = async function(){
+
+const snapshot =
+await getDocs(collection(db,"treatmentPrices"));
+
+const select =
+document.getElementById("mapProcedure");
+
+if(!select) return;
+
+select.innerHTML =
+'<option value="">Select Procedure</option>';
+
+snapshot.forEach(docSnap=>{
+
+const t = docSnap.data();
+
+select.innerHTML += `
+<option value="${t.procedure}">
+${t.procedure}
+</option>`;
+
+});
+
+}
+;
+
+
+/* ==========================================================
+   CORRECTED APPLICATION LOGIC
+   This section intentionally overrides older duplicate handlers
+   in the original file so there is one active workflow.
+========================================================== */
+
+window.currentStaff = null;
+window.currentRole = null;
+
+function esc(value){
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+function normalizeRole(role){
+    const value = String(role || "").trim().toLowerCase();
+    if(value === "reception" || value === "receptionist") return "Receptionist";
+    if(value === "admin" || value === "administrator") return "Administrator";
+    if(value === "dentist") return "Dentist";
+    return String(role || "").trim();
+}
+
+function requireRole(allowed){
+    const role = normalizeRole(window.currentRole);
+    if(!allowed.includes(role)){
+        alert("You do not have permission to open this section.");
+        return false;
+    }
+    return true;
+}
+
+/* -------------------
+   REAL STAFF LOGIN
+------------------- */
+window.login = async function(){
+    const selectedRole = normalizeRole(document.getElementById("loginRole")?.value || "");
+    const user = (document.getElementById("loginUser")?.value || "").trim().toLowerCase();
+    const pass = (document.getElementById("loginPassword")?.value || "").trim();
+
+    if(!selectedRole){
+        alert("Please select your role.");
+        return;
+    }
+
+    if(!user || !pass){
+        alert("Please enter your username and PIN.");
+        return;
+    }
+
+    try{
+        /*
+           Do not query username with an exact Firestore match here.
+           Older staff accounts may have been saved as "James" while
+           newer accounts are saved as "james". Firestore string queries
+           are case-sensitive, so we normalize locally for reliable login.
+        */
+        const snap = await getDocs(collection(db,"staff"));
+
+        const matches = snap.docs.filter(docSnap => {
+            const s = docSnap.data() || {};
+            const storedUsername = String(s.username ?? s.userName ?? "").trim().toLowerCase();
+            const storedPin = String(s.pin ?? s.PIN ?? s.password ?? "").trim();
+            const storedRole = normalizeRole(s.role ?? s.staffRole ?? "");
+            const isActive = s.active !== false &&
+                String(s.status ?? "Active").trim().toLowerCase() !== "inactive";
+
+            return storedUsername === user &&
+                   storedRole === selectedRole &&
+                   storedPin === pass &&
+                   isActive;
+        });
+
+        if(matches.length === 0){
+            alert("Invalid role, username or PIN.");
+            return;
+        }
+
+        const staffDoc = matches[0];
+        const staff = staffDoc.data() || {};
+        const role = normalizeRole(staff.role ?? staff.staffRole ?? selectedRole);
+
+        window.currentStaff = {id:staffDoc.id,...staff,role};
+        window.currentRole = role;
+
+        const currentUser = document.getElementById("currentUser");
+        if(currentUser){
+            currentUser.innerHTML = esc((staff.name || user) + " (" + role + ")");
+        }
+
+        const loginPage = document.getElementById("loginPage");
+        const dashboard = document.getElementById("dashboard");
+        if(loginPage) loginPage.style.display = "none";
+        if(dashboard) dashboard.style.display = "block";
+
+        applyRole(role);
+        await loadDashboard();
+        await showPage("home");
+
+    }catch(error){
+        console.error("Login error:",error);
+        alert("Login failed. Check your internet connection and Firestore permissions.");
+    }
+};
+
+/* -------------------
+   ROLE-BASED NAVIGATION
+------------------- */
+window.applyRole = function(role){
+    role = normalizeRole(role);
+    window.currentRole = role;
+
+    const permissions = {
+        Administrator:["home","patients","appointments","dentist","treatments","payments","inventory","reports","staff","settings","prices"],
+        Receptionist:["home","patients","appointments","payments","invoices"],
+        Dentist:["home","patients","appointments","dentist","treatments","prescriptions"]
+    };
+
+    document.querySelectorAll(".menu button[data-page]").forEach(btn=>{
+        btn.style.display = permissions[role]?.includes(btn.dataset.page) ? "block" : "none";
+    });
+};
+
+/* Mark existing menu buttons with their page names. */
+(function markMenuButtons(){
+    const map = ["home","patients","appointments","dentist","treatments","payments","inventory","reports","staff","settings","prices",null];
+    document.querySelectorAll(".menu button").forEach((btn,i)=>{
+        if(map[i]) btn.dataset.page = map[i];
+    });
+})();
+
+/* -------------------
+   STAFF MANAGEMENT
+------------------- */
+window.showStaff = async function(){
+    if(!requireRole(["Administrator"])) return;
+
+    document.getElementById("pageTitle").innerHTML="Staff";
+    document.getElementById("content").innerHTML=`
+        <h2>Staff Management</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;margin-top:20px;">
+            <input id="staffName" class="input" placeholder="Full Name">
+            <input id="staffPhone" class="input" placeholder="Phone Number">
+            <input id="staffEmail" class="input" placeholder="Email Address">
+            <input id="staffUsername" class="input" placeholder="Login Username">
+            <div style="display:flex;gap:8px;align-items:center;">
+<input id="staffPin" class="input" type="password" inputmode="numeric" maxlength="4" pattern="\d{4}" placeholder="Login PIN (4 digits)" style="flex:1;">
+<button type="button" class="btn" style="width:auto;margin:0;" onclick="toggleStaffPin()">Show PIN</button>
+</div>
+            <select id="staffRole" class="input">
+                <option value="">Select Role</option>
+                <option>Administrator</option>
+                <option>Dentist</option>
+                <option>Receptionist</option>
+            </select>
+        </div>
+        <button id="saveStaffBtn" class="btn" style="margin-top:15px;" onclick="saveStaff()">Save Staff</button>
+        <hr style="margin:25px 0;">
+        <div id="staffList"></div>
+    `;
+    await drawStaff();
+};
+
+window.saveStaff = async function(){
+    if(!requireRole(["Administrator"])) return;
+    const name=document.getElementById("staffName").value.trim();
+    const phone=document.getElementById("staffPhone").value.trim();
+    const email=document.getElementById("staffEmail").value.trim();
+    const username=document.getElementById("staffUsername").value.trim().toLowerCase();
+    const pin=document.getElementById("staffPin").value.trim();
+    const role=normalizeRole(document.getElementById("staffRole").value);
+
+    if(!name || !username || !pin || !role){
+        alert("Name, username, PIN and role are required.");
+        return;
+    }
+    if(!/^\d{4,}$/.test(pin)){
+        alert("PIN must contain exactly 4 digits.");
+        return;
+    }
+
+    const existing=await getDocs(query(collection(db,"staff"),where("username","==",username)));
+    if(!existing.empty){
+        alert("That username already exists.");
+        return;
+    }
+
+    await addDoc(collection(db,"staff"),{
+        name,phone,email,username,pin,role,active:true,created:serverTimestamp()
+    });
+
+    alert("Staff account saved successfully.");
+    await showStaff();
+};
+
+window.drawStaff = async function(){
+    const holder=document.getElementById("staffList");
+    if(!holder) return;
+    const snap=await getDocs(collection(db,"staff"));
+    let html="";
+
+    snap.forEach(ds=>{
+        const s=ds.data();
+        html+=`<div class="card" style="margin-bottom:15px;">
+            <h3>${esc(s.name)}</h3>
+            <p><b>Role:</b> ${esc(normalizeRole(s.role))}</p>
+            <p><b>Username:</b> ${esc(s.username || "Not set")}</p>
+            <p><b>PIN:</b> ${esc(s.pin || "Not set")}</p>
+            <p><b>Phone:</b> ${esc(s.phone || "")}</p>
+            <p><b>Email:</b> ${esc(s.email || "")}</p>
+            <p><b>Status:</b> ${s.active===false ? "Inactive" : "Active"}</p>
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+                <button class="btn" onclick="editStaff('${ds.id}')">Edit</button>
+                <button class="btn" style="background:#d9534f;" onclick="deleteStaff('${ds.id}')">Delete</button>
+            </div>
+        </div>`;
+    });
+    holder.innerHTML=html || "<p>No staff accounts found.</p>";
+};
+
+window.editStaff = async function(id){
+    if(!requireRole(["Administrator"])) return;
+    const snap=await getDoc(doc(db,"staff",id));
+    if(!snap.exists()){ alert("Staff member not found."); return; }
+    const s=snap.data();
+    document.getElementById("staffName").value=s.name||"";
+    document.getElementById("staffPhone").value=s.phone||"";
+    document.getElementById("staffEmail").value=s.email||"";
+    document.getElementById("staffUsername").value=s.username||"";
+    document.getElementById("staffPin").value=s.pin||"";
+    document.getElementById("staffRole").value=normalizeRole(s.role);
+    window.editingStaffId=id;
+    const b=document.getElementById("saveStaffBtn");
+    b.innerHTML="Update Staff";
+    b.onclick=updateStaff;
+    window.scrollTo(0,0);
+};
+
+window.updateStaff = async function(){
+    if(!requireRole(["Administrator"])) return;
+    const id=window.editingStaffId;
+    if(!id) return;
+    const name=document.getElementById("staffName").value.trim();
+    const phone=document.getElementById("staffPhone").value.trim();
+    const email=document.getElementById("staffEmail").value.trim();
+    const username=document.getElementById("staffUsername").value.trim().toLowerCase();
+    const pin=document.getElementById("staffPin").value.trim();
+    const role=normalizeRole(document.getElementById("staffRole").value);
+    if(!name || !username || !pin || !role){ alert("Complete all staff account fields."); return; }
+    if(!/^\d{4,}$/.test(pin)){ alert("PIN must contain exactly 4 digits."); return; }
+
+    const allStaff=await getDocs(collection(db,"staff"));
+    const duplicate=allStaff.docs.find(d=>{
+        if(d.id===id) return false;
+        const existing=String(d.data()?.username ?? d.data()?.userName ?? "").trim().toLowerCase();
+        return existing===username;
+    });
+    if(duplicate){ alert("That username already belongs to another staff member."); return; }
+
+    await updateDoc(doc(db,"staff",id),{name,phone,email,username,pin,role,active:true,updated:serverTimestamp()});
+    window.editingStaffId=null;
+    alert("Staff account updated successfully.");
+    await showStaff();
+};
+
+window.deleteStaff = async function(id){
+    if(!requireRole(["Administrator"])) return;
+    if(!confirm("Delete this staff account?")) return;
+    await deleteDoc(doc(db,"staff",id));
+    await drawStaff();
+};
+
+/* -------------------
+   PATIENT FILE
+------------------- */
+window.openPatientFile = async function(id){
+    const patientSnap=await getDoc(doc(db,"patients",id));
+    if(!patientSnap.exists()){ alert("Patient not found."); return; }
+    const p=patientSnap.data();
+    document.getElementById("pageTitle").innerHTML="Patient File";
+    document.getElementById("content").innerHTML=`
+        <h2>${esc(p.name)}</h2>
+        <p><b>Patient Number:</b> ${esc(p.patientNo)}</p>
+        <hr style="margin:20px 0;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;">
+            <button class="btn" onclick="showPatientInfo('${id}')">Patient Information</button>
+            <button class="btn" onclick="showAppointments('${id}')">Appointments</button>
+            <button class="btn" onclick="showDentalChart('${id}')">Dental Chart</button>
+            <button class="btn" onclick="showExaminations('${id}')">Examinations</button>
+            <button class="btn" onclick="showTreatments('${id}')">Treatments</button>
+            <button class="btn" onclick="showPrescriptions('${id}')">Prescriptions</button>
+            <button class="btn" onclick="showInvoices('${id}')">📄 Invoices</button>
+            <button class="btn" onclick="showPayments('${id}')">💰 Payments</button>
+        </div>
+        <div id="patientFileContent" style="margin-top:25px;"></div>
+    `;
+    showPatientInfo(id);
+};
+
+/* -------------------
+   APPOINTMENT MANAGEMENT
+------------------- */
+window.showPageAppointments = async function(){
+    if(!requireRole(["Administrator","Dentist","Receptionist"])) return;
+    document.getElementById("pageTitle").innerHTML="Appointments";
+    const snap=await getDocs(query(collection(db,"appointments"),orderBy("date","asc")));
+    let html=`<div class="card"><h2>Appointments</h2>`;
+    if(snap.empty) html+="<p>No appointments found.</p>";
+    for(const ds of snap.docs){
+        const a=ds.data();
+        let patientName=a.patientId;
+        try{
+            const ps=await getDoc(doc(db,"patients",a.patientId));
+            if(ps.exists()) patientName=ps.data().name+" ("+ps.data().patientNo+")";
+        }catch(e){}
+        html+=`<div style="border:1px solid #ddd;border-radius:10px;padding:15px;margin-top:15px;">
+            <b>${esc(patientName)}</b><br>
+            <b>Date:</b> ${esc(a.date)} &nbsp; <b>Time:</b> ${esc(a.time||"-")}<br>
+            <b>Reason:</b> ${esc(a.reason)}<br>
+            <b>Status:</b> ${esc(a.status||"Booked")}<br>
+            <button class="btn" style="margin-top:10px;" onclick="updateAppointmentStatus('${ds.id}','Confirmed')">Confirm</button>
+            <button class="btn" style="margin-top:10px;" onclick="updateAppointmentStatus('${ds.id}','Completed')">Completed</button>
+            <button class="btn" style="margin-top:10px;background:#c62828;" onclick="updateAppointmentStatus('${ds.id}','Cancelled')">Cancel</button>
+        </div>`;
+    }
+    html+=`</div>`;
+    document.getElementById("content").innerHTML=html;
+};
+window.updateAppointmentStatus=async function(id,status){
+    await updateDoc(doc(db,"appointments",id),{status,updated:serverTimestamp()});
+    await showPageAppointments();
+};
+
+/* -------------------
+   CONSISTENT SHOW PAGE
+------------------- */
+const originalShowPage = window.showPage;
+window.showPage = async function(page){
+    if(page==="appointments"){ await showPageAppointments(); return; }
+    if(page==="settings"){ await showSettings(); return; }
+    if(page==="dentist"){
+        if(!requireRole(["Administrator","Dentist"])) return;
+        document.getElementById("pageTitle").innerHTML="Examination Queue";
+        const snap=await getDocs(query(collection(db,"patients"),where("status","in",["Waiting","Examined","Waiting Payment"])));
+        let html=`<div class="card"><h2>Patient Clinical Queue</h2>`;
+        snap.forEach(ds=>{
+            const p=ds.data();
+            html+=`<div style="border:1px solid #ddd;border-radius:10px;padding:15px;margin-top:15px;">
+                <b>${esc(p.patientNo)} - ${esc(p.name)}</b><br>
+                <b>Status:</b> ${esc(p.status||"Waiting")}<br>
+                <button class="btn" style="margin-top:10px;" onclick="openPatientFile('${ds.id}')">Open Patient File</button>
+            </div>`;
+        });
+        html+=`</div>`;
+        document.getElementById("content").innerHTML=html;
+        return;
+    }
+    if(page==="treatments"){
+        if(!requireRole(["Administrator","Dentist"])) return;
+        document.getElementById("pageTitle").innerHTML="Treatments";
+        const snap=await getDocs(query(collection(db,"treatments"),orderBy("created","desc")));
+        let html=`<div class="card"><h2>Recent Treatments</h2>`;
+        for(const ds of snap.docs.slice(0,100)){
+            const t=ds.data();
+            html+=`<div style="border-bottom:1px solid #ddd;padding:12px 0;"><b>${esc(t.procedure)}</b> — KES ${Number(t.cost||0).toLocaleString()}<br>Patient: ${esc(t.patientId)} | ${esc(t.date)} | ${esc(t.status)}</div>`;
+        }
+        html+=`</div>`;
+        document.getElementById("content").innerHTML=html;
+        return;
+    }
+    if(page==="payments"){
+        if(!requireRole(["Administrator","Receptionist"])) return;
+        document.getElementById("pageTitle").innerHTML="Payments";
+        const snap=await getDocs(query(collection(db,"payments"),orderBy("created","desc")));
+        let html=`<div class="card"><h2>Payment History</h2><div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;"><tr><th>Receipt</th><th>Patient</th><th>Amount</th><th>Method</th><th>Date</th></tr>`;
+        snap.forEach(ds=>{const x=ds.data();html+=`<tr><td>${esc(x.receiptNo)}</td><td>${esc(x.patientId)}</td><td>KES ${Number(x.amountPaid||0).toLocaleString()}</td><td>${esc(x.paymentMethod)}</td><td>${esc(x.date)}</td></tr>`;});
+        html+=`</table></div></div>`;
+        document.getElementById("content").innerHTML=html;
+        return;
+    }
+    if(page==="reports"){
+        if(!requireRole(["Administrator"])) return;
+        await showReports(); return;
+    }
+    if(page==="staff"){
+        await showStaff(); return;
+    }
+    if(page==="inventory"){
+        if(!requireRole(["Administrator"])) return;
+        await showInventory(); return;
+    }
+    if(page==="prices"){
+        if(!requireRole(["Administrator"])) return;
+        await showTreatmentPrices(); return;
+    }
+    if(page==="patients"){
+        if(!requireRole(["Administrator","Dentist","Receptionist"])) return;
+    }
+    if(page==="home"){
+        document.getElementById("pageTitle").innerHTML="Dashboard";
+        document.getElementById("content").innerHTML=`<div class="card"><h2>Elephant Dental Ltd</h2><p>Welcome, ${esc(window.currentStaff?.name||"")}.</p><p>Role: <b>${esc(window.currentRole||"")}</b></p><p>Use the menu to manage patients, appointments, clinical records, billing and inventory according to your permissions.</p></div>`;
+        await loadDashboard();
+        return;
+    }
+    return originalShowPage(page);
+};
+
+/* -------------------
+   TREATMENT + INVENTORY
+------------------- */
+window.deductInventory = async function(itemName,qty){
+    qty=Number(qty||0);
+    if(!itemName || qty<=0) throw new Error("Invalid inventory deduction.");
+    const q=query(collection(db,"inventory"),where("itemName","==",itemName));
+    const snap=await getDocs(q);
+    if(snap.empty) throw new Error("Material not found in inventory: "+itemName);
+    const ds=snap.docs[0];
+    const item=ds.data();
+    const current=Number(item.quantity||0);
+    if(current<qty) throw new Error("Not enough stock for "+itemName+". Available: "+current+".");
+    const newQty=current-qty;
+    await updateDoc(doc(db,"inventory",ds.id),{quantity:newQty,updated:serverTimestamp()});
+    await addDoc(collection(db,"stockHistory"),{
+        item:itemName,type:"Treatment Usage",quantity:qty,balance:newQty,
+        patientId:window.activeTreatmentPatientId||null,
+        created:serverTimestamp(),date:new Date().toLocaleString()
+    });
+};
+
+window.saveTreatment = async function(patientId){
+    if(!requireRole(["Administrator","Dentist"])) return;
+    const date=document.getElementById("treatmentDate").value;
+    const tooth=document.getElementById("treatmentTooth").value;
+    const procedure=document.getElementById("treatmentProcedure").value;
+    const cost=Number(document.getElementById("treatmentCost").value||0);
+    const status=document.getElementById("treatmentStatus").value;
+    const notes=document.getElementById("treatmentNotes").value.trim();
+    const nextVisitDate=document.getElementById("nextVisitDate").value;
+    const nextVisitReason=document.getElementById("nextVisitReason").value.trim();
+
+    if(!date || !procedure){ alert("Please select the treatment date and procedure."); return; }
+    if(cost<=0){ alert("Please enter a valid treatment price."); return; }
+
+    window.activeTreatmentPatientId=patientId;
+
+    try{
+        /* Deduct material only when the treatment is actually completed. */
+        if(status==="Completed"){
+            const mq=query(collection(db,"procedureMaterials"),where("procedure","==",procedure));
+            const ms=await getDocs(mq);
+            for(const materialDoc of ms.docs){
+                const m=materialDoc.data();
+                const qty=Number(m.qty ?? m.quantity ?? 0);
+                if(qty>0) await deductInventory(m.item,qty);
+            }
+        }
+
+        const treatmentRef=await addDoc(collection(db,"treatments"),{
+            patientId,date,tooth,procedure,cost,status,notes,nextVisitDate,nextVisitReason,
+            created:serverTimestamp(),createdBy:window.currentStaff?.id||null
+        });
+
+        if(status==="Completed"){
+            await updateDoc(doc(db,"patients",patientId),{status:"Waiting Payment",updated:serverTimestamp()});
+        }else if(status==="Planned" || status==="In Progress"){
+            await updateDoc(doc(db,"patients",patientId),{status:"Treatment Planned",updated:serverTimestamp()});
+        }
+
+        if(nextVisitDate){
+            await addDoc(collection(db,"appointments"),{
+                patientId,date:nextVisitDate,time:"",
+                reason:nextVisitReason||("Review - "+procedure),
+                notes:"Automatically created from treatment",
+                status:"Booked",created:serverTimestamp()
+            });
+        }
+
+        await syncPatientInvoice(patientId);
+        alert("Treatment saved successfully.");
+        await loadDashboard();
+        await openPatientFile(patientId);
+        await showTreatments(patientId);
+    }catch(error){
+        console.error(error);
+        alert(error.message || "Treatment could not be saved. No partial treatment record was created after a material failure.");
+    }finally{
+        window.activeTreatmentPatientId=null;
+    }
+};
+
+/* -------------------
+   INVOICE SYSTEM
+------------------- */
+window.syncPatientInvoice = async function(patientId){
+    const tq=query(collection(db,"treatments"),where("patientId","==",patientId));
+    const pq=query(collection(db,"payments"),where("patientId","==",patientId));
+    const iq=query(collection(db,"invoices"),where("patientId","==",patientId));
+    const [ts,ps,is]=await Promise.all([getDocs(tq),getDocs(pq),getDocs(iq)]);
+    let total=0;
+    ts.forEach(ds=>{const t=ds.data()||{};if(t.status==="Completed") total+=Number(t.cost||0);});
+    let paid=0;
+    ps.forEach(ds=>{const p=ds.data()||{};paid+=Number(p.amountApplied ?? p.amountPaid ?? 0);});
+    total=Math.max(0,Number(total.toFixed(2)));
+    paid=Math.max(0,Number(paid.toFixed(2)));
+    const balance=Math.max(0,Number((total-paid).toFixed(2)));
+    const status=total<=0?"Draft":balance<=0?"Paid":paid>0?"Partially Paid":"Unpaid";
+    if(is.empty){
+        await addDoc(collection(db,"invoices"),{invoiceNo:"INV-"+crypto.randomUUID(),patientId,total,totalPaid:paid,balance,status,created:serverTimestamp(),updated:serverTimestamp()});
+    }else{
+        await updateDoc(doc(db,"invoices",is.docs[0].id),{total,totalPaid:paid,balance,status,updated:serverTimestamp()});
+    }
+};
+
+window.showInvoices = async function(patientId){
+    await syncPatientInvoice(patientId);
+    const tq=query(collection(db,"treatments"),where("patientId","==",patientId));
+    const ts=await getDocs(tq);
+    let total=0,rows="";
+    ts.forEach(ds=>{const t=ds.data();if(t.status==="Completed"){total+=Number(t.cost||0);rows+=`<tr><td>${esc(t.procedure)}</td><td>${esc(t.tooth||"-")}</td><td style="text-align:right;">KES ${Number(t.cost||0).toLocaleString()}</td></tr>`;}});
+
+    const ps=await getDocs(query(collection(db,"payments"),where("patientId","==",patientId)));
+    let paid=0; ps.forEach(ds=>paid+=Number(ds.data().amountPaid||0));
+    const balance=Math.max(0,total-paid);
+    const inv=await getDocs(query(collection(db,"invoices"),where("patientId","==",patientId)));
+    const invoice=inv.empty?null:inv.docs[0].data();
+
+    document.getElementById("patientFileContent").innerHTML=`<div class="card">
+        <h2>Invoice ${esc(invoice?.invoiceNo||"")}</h2>
+        <table style="width:100%;border-collapse:collapse;"><tr><th>Procedure</th><th>Tooth</th><th style="text-align:right;">Amount</th></tr>${rows}</table>
+        <hr style="margin:20px 0;">
+        <p><b>Total Bill:</b> KES ${total.toLocaleString()}</p>
+        <p><b>Total Paid:</b> KES ${paid.toLocaleString()}</p>
+        <p><b>Balance:</b> KES ${balance.toLocaleString()}</p>
+        <p><b>Status:</b> ${balance<=0 && total>0 ? "Paid" : paid>0 ? "Partially Paid" : "Unpaid"}</p>
+        ${balance>0?`<button class="btn" onclick="showPayments('${patientId}')">Receive Payment</button>`:`<p style="margin-top:15px;">This invoice is fully paid.</p>`}
+    </div>`;
+};
+
+/* -------------------
+   CORRECT PAYMENT ACCOUNTING
+------------------- */
+window.showPayments = async function(patientId){
+    await syncPatientInvoice(patientId);
+    const tq=query(collection(db,"treatments"),where("patientId","==",patientId));
+    const ts=await getDocs(tq);
+    let totalBill=0,bill="";
+    ts.forEach(ds=>{const t=ds.data();if(t.status==="Completed"){totalBill+=Number(t.cost||0);bill+=`<tr><td>${esc(t.procedure)}</td><td>${esc(t.tooth||"-")}</td><td style="text-align:right;">KES ${Number(t.cost||0).toLocaleString()}</td></tr>`;}});
+    const ps=await getDocs(query(collection(db,"payments"),where("patientId","==",patientId)));
+    let totalPaid=0;ps.forEach(ds=>totalPaid+=Number(ds.data().amountPaid||0));
+    const balance=Math.max(0,totalBill-totalPaid);
+
+    let history="";
+    ps.forEach(ds=>{const p=ds.data();history+=`<tr><td>${esc(p.receiptNo)}</td><td>${esc(p.date)}</td><td>${esc(p.paymentMethod)}</td><td style="text-align:right;">KES ${Number(p.amountPaid||0).toLocaleString()}</td></tr>`;});
+
+    document.getElementById("patientFileContent").innerHTML=`<div class="card">
+        <h2>Patient Payments</h2>
+        <table style="width:100%;border-collapse:collapse;"><tr><th>Procedure</th><th>Tooth</th><th style="text-align:right;">Amount</th></tr>${bill}</table>
+        <hr style="margin:20px 0;">
+        <h3>Total Bill: KES ${totalBill.toLocaleString()}</h3>
+        <h3>Total Paid: KES ${totalPaid.toLocaleString()}</h3>
+        <h3>Balance: KES ${balance.toLocaleString()}</h3>
+        ${balance>0?`<input id="amountPaid" class="input" type="number" min="1" max="${balance}" placeholder="Amount Paid">
+        <select id="paymentMethod" class="input"><option>Cash</option><option>M-Pesa</option><option>Card</option><option>Insurance</option></select>
+        <button class="btn" onclick="savePayment('${patientId}')">Receive Payment</button>`:`<p style="margin-top:10px;color:#2e7d32;font-weight:bold;">Invoice fully paid.</p>`}
+        <button class="btn" style="margin-top:10px;background:#1565c0;" onclick="printReceipt('${patientId}')">🖨 Print Latest Receipt</button>
+        <hr style="margin:25px 0;"><h3>Payment History</h3>
+        <div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;"><tr><th>Receipt</th><th>Date</th><th>Method</th><th>Amount</th></tr>${history||"<tr><td colspan='4'>No payments recorded.</td></tr>"}</table></div>
+    </div>`;
+};
+
+window.savePayment = async function(patientId){
+    if(!requireRole(["Administrator","Receptionist"])) return;
+    const amount=Number(document.getElementById("amountPaid")?.value||0);
+    const method=document.getElementById("paymentMethod")?.value||"";
+    if(amount<=0){alert("Enter a valid payment amount.");return;}
+
+    await syncPatientInvoice(patientId);
+    const ts=await getDocs(query(collection(db,"treatments"),where("patientId","==",patientId)));
+    let totalBill=0;ts.forEach(ds=>{const t=ds.data();if(t.status==="Completed") totalBill+=Number(t.cost||0);});
+    const ps=await getDocs(query(collection(db,"payments"),where("patientId","==",patientId)));
+    let totalPaid=0;ps.forEach(ds=>totalPaid+=Number(ds.data().amountPaid||0));
+    const balance=Math.max(0,totalBill-totalPaid);
+    if(amount>balance){alert("Payment exceeds the remaining balance of KES "+balance.toLocaleString()+".");return;}
+
+    const receiptNo="RCP-"+Date.now();
+    const after=balance-amount;
+    await addDoc(collection(db,"payments"),{
+        receiptNo,patientId,totalBill,amountPaid:amount,balance:after,
+        paymentMethod,date:new Date().toISOString().split("T")[0],
+        created:serverTimestamp(),receivedBy:window.currentStaff?.id||null
+    });
+
+    await syncPatientInvoice(patientId);
+    await updateDoc(doc(db,"patients",patientId),{
+        status:after<=0?"Completed":"Partially Paid",
+        updated:serverTimestamp()
+    });
+
+    alert("Payment received successfully. Receipt: "+receiptNo);
+    await loadDashboard();
+    await showPayments(patientId);
+};
+
+/* -------------------
+   SETTINGS
+------------------- */
+window.showSettings = async function(){
+    if(!requireRole(["Administrator"])) return;
+    const refDoc=doc(db,"settings","clinic");
+    const snap=await getDoc(refDoc);
+    const s=snap.exists()?snap.data():{};
+    document.getElementById("pageTitle").innerHTML="Settings";
+    document.getElementById("content").innerHTML=`<div class="card">
+        <h2>Clinic Settings</h2>
+        <input id="setClinicName" class="input" value="${esc(s.name||"Elephant Dental Ltd")}" placeholder="Clinic Name">
+        <input id="setPhone" class="input" value="${esc(s.phone||"")}" placeholder="Clinic Phone">
+        <input id="setEmail" class="input" value="${esc(s.email||"")}" placeholder="Clinic Email">
+        <input id="setAddress" class="input" value="${esc(s.address||"Emali")}" placeholder="Clinic Address">
+        <input id="setReceiptFooter" class="input" value="${esc(s.receiptFooter||"Thank you for visiting Elephant Dental Ltd.")}" placeholder="Receipt Footer">
+        <button class="btn" onclick="saveSettings()">Save Settings</button>
+        <hr style="margin:25px 0;">
+        <p><b>Security:</b> staff roles are assigned in Staff Management. Do not share staff PINs.</p>
+        <p><b>Note:</b> Firestore Security Rules must also enforce these permissions; hiding menu buttons alone is not database security.</p>
+    </div>`;
+};
+window.saveSettings=async function(){
+    if(!requireRole(["Administrator"])) return;
+    await setDoc(doc(db,"settings","clinic"),{
+        name:document.getElementById("setClinicName").value.trim(),
+        phone:document.getElementById("setPhone").value.trim(),
+        email:document.getElementById("setEmail").value.trim(),
+        address:document.getElementById("setAddress").value.trim(),
+        receiptFooter:document.getElementById("setReceiptFooter").value.trim(),
+        updated:serverTimestamp()
+    },{merge:true});
+    alert("Settings saved successfully.");
+};
+
+
+
+
+/* -------------------
+   SAFE PATIENT DELETION
+------------------- */
+window.deletePatient = async function(id){
+    if(!requireRole(["Administrator"])) return;
+    if(!confirm("Delete this patient? This should only be used for a duplicate/test record. Clinical records are not automatically deleted.")) return;
+    await deleteDoc(doc(db,"patients",id));
+    alert("Patient deleted. For real clinical records, use an archive workflow rather than deletion.");
+    await drawPatients();
+    await loadDashboard();
+};
+
+/* -------------------
+   RECEIPT: PRINT THE ACTUAL PAYMENT TRANSACTION
+------------------- */
+window.printReceipt = async function(patientId){
+    const patientSnap=await getDoc(doc(db,"patients",patientId));
+    if(!patientSnap.exists()){alert("Patient not found.");return;}
+    const patient=patientSnap.data();
+
+    const paymentSnap=await getDocs(query(collection(db,"payments"),where("patientId","==",patientId)));
+    if(paymentSnap.empty){alert("No payment has been recorded for this patient.");return;}
+
+    let latest=null;
+    paymentSnap.forEach(ds=>{
+        const p=ds.data();
+        const ts=p.created?.seconds || 0;
+        if(!latest || ts>(latest.ts||0)) latest={...p,ts};
+    });
+    if(!latest){alert("Payment record not found.");return;}
+
+    const tq=await getDocs(query(collection(db,"treatments"),where("patientId","==",patientId)));
+    let total=0,rows="";
+    tq.forEach(ds=>{const t=ds.data();if(t.status==="Completed"){total+=Number(t.cost||0);rows+=`<tr><td>${esc(t.procedure)}</td><td>${esc(t.tooth||"-")}</td><td style="text-align:right;">KES ${Number(t.cost||0).toLocaleString()}</td></tr>`;}});
+
+    const w=window.open("","","width=800,height=900");
+    if(!w){alert("Please allow pop-ups to print the receipt.");return;}
+    w.document.write(`<!DOCTYPE html><html><head><title>${esc(latest.receiptNo)}</title><style>body{font-family:Arial;padding:30px}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #ddd}h2,h3{text-align:center}</style></head><body>
+        <h2>ELEPHANT DENTAL LTD</h2><h3>Emali</h3>
+        <p><b>Receipt No:</b> ${esc(latest.receiptNo)}</p>
+        <p><b>Patient:</b> ${esc(patient.name)}</p><p><b>Patient No:</b> ${esc(patient.patientNo)}</p><p><b>Date:</b> ${esc(latest.date||"")}</p>
+        <table><tr><th>Procedure</th><th>Tooth</th><th>Amount</th></tr>${rows}</table>
+        <h3>Total Bill: KES ${total.toLocaleString()}</h3>
+        <p><b>This Payment:</b> KES ${Number(latest.amountPaid||0).toLocaleString()}</p>
+        <p><b>Balance After Payment:</b> KES ${Number(latest.balance||0).toLocaleString()}</p>
+        <p><b>Payment Method:</b> ${esc(latest.paymentMethod||"")}</p>
+        <p style="text-align:center;margin-top:40px">Thank you for visiting Elephant Dental Ltd.</p>
+    </body></html>`);
+    w.document.close();
+    w.focus();
+    w.print();
+};
+
+
+
+
+/* ==========================================================
+   FINAL CLINIC WORKFLOW
+   Reception -> Queue -> Dentist -> Charges -> Payment
+   Emergency priority, arrival-order queue, appointments,
+   automatic membership numbers, membership cards and
+   administrator-only factory reset.
+========================================================== */
+
+window.currentStaff = window.currentStaff || null;
+window.currentRole = window.currentRole || null;
+window.activeVisitId = null;
+
+function clinicEsc(value){
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/\"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+function clinicRole(role){
+    const v=String(role||"").trim().toLowerCase();
+    if(v==="admin" || v==="administrator") return "Administrator";
+    if(v==="reception" || v==="receptionist") return "Receptionist";
+    if(v==="dentist") return "Dentist";
+    return String(role||"").trim();
+}
+
+function clinicRequire(roles){
+    const role=clinicRole(window.currentRole);
+    if(!roles.includes(role)){
+        alert("You do not have permission to perform this action.");
+        return false;
+    }
+    return true;
+}
+
+function clinicToday(){
+    const d=new Date();
+    return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+
+function clinicTimeValue(v){
+    if(!v) return "23:59";
+    return String(v);
+}
+
+function clinicTimestampMs(value){
+    if(!value) return 0;
+    if(typeof value.toMillis === "function") return value.toMillis();
+    if(value.seconds) return Number(value.seconds)*1000;
+    const n=new Date(value).getTime();
+    return Number.isFinite(n)?n:0;
+}
+
+function clinicStatusLabel(status){
+    const map={
+        Waiting:"WAITING FOR DENTIST",
+        WithDentist:"WITH DENTIST",
+        WaitingPayment:"AWAITING PAYMENT",
+        Completed:"COMPLETED",
+        Cancelled:"CANCELLED"
+    };
+    return map[status]||String(status||"").toUpperCase();
+}
+
+function clinicStatusClass(status){
+    if(status==="Waiting") return "background:#fff3cd;color:#856404;";
+    if(status==="WithDentist") return "background:#cfe8ff;color:#084298;";
+    if(status==="WaitingPayment") return "background:#ffe0b2;color:#7a4100;";
+    if(status==="Completed") return "background:#d1e7dd;color:#0f5132;";
+    return "background:#eee;color:#555;";
+}
+
+/* ----------------------------------------------------------
+   LOGIN - case-insensitive username and normalized roles
+---------------------------------------------------------- */
+window.login = async function(){
+    const selectedRole=clinicRole(document.getElementById("loginRole")?.value||"");
+    const username=(document.getElementById("loginUser")?.value||"").trim().toLowerCase();
+    const pin=(document.getElementById("loginPassword")?.value||"").trim();
+
+    if(!selectedRole){ alert("Please select your role."); return; }
+    if(!username || !pin){ alert("Please enter your username and PIN."); return; }
+
+    try{
+        const snap=await getDocs(collection(db,"staff"));
+        const matches=snap.docs.filter(ds=>{
+            const s=ds.data()||{};
+            const storedUser=String(s.username??s.userName??"").trim().toLowerCase();
+            const storedPin=String(s.pin??s.PIN??s.password??"").trim();
+            const role=clinicRole(s.role??s.staffRole??"");
+            const status=String(s.status??"Active").trim().toLowerCase();
+            const active=s.active!==false && status!=="inactive";
+            return storedUser===username && storedPin===pin && role===selectedRole && active;
+        });
+
+        if(!matches.length){
+            alert("Invalid role, username or PIN.");
+            return;
+        }
+
+        const staffDoc=matches[0];
+        const staff=staffDoc.data()||{};
+        const role=clinicRole(staff.role??selectedRole);
+        window.currentStaff={id:staffDoc.id,...staff,role};
+        window.currentRole=role;
+
+        const userEl=document.getElementById("currentUser");
+        if(userEl) userEl.textContent=(staff.name||username)+" ("+role+")";
+        document.getElementById("loginPage").style.display="none";
+        document.getElementById("dashboard").style.display="block";
+
+        clinicApplyRole(role);
+        await loadDashboard();
+        await window.showPage("home");
+    }catch(error){
+        console.error("Login error:",error);
+        alert("Login failed. Check your internet connection and Firestore permissions.");
+    }
+};
+
+function clinicApplyRole(role){
+    role=clinicRole(role);
+    window.currentRole=role;
+    const permissions={
+        Administrator:["home","patients","appointments","dentist","treatments","payments","inventory","reports","staff","settings","prices"],
+        Receptionist:["home","patients","appointments","payments"],
+        Dentist:["home","patients","appointments","dentist","treatments","prescriptions"]
+    };
+    document.querySelectorAll(".menu button[data-page]").forEach(btn=>{
+        const page=btn.dataset.page;
+        btn.style.display=(permissions[role]||[]).includes(page)?"block":"none";
+    });
+}
+window.applyRole=clinicApplyRole;
+
+/* ----------------------------------------------------------
+   AUTOMATIC MEMBERSHIP NUMBER
+---------------------------------------------------------- */
+async function clinicNextMembershipNumber(){
+    const counterRef=doc(db,"counters","patients");
+    let number=1;
+
+    try{
+        await runTransaction(db,async transaction=>{
+            const snap=await transaction.get(counterRef);
+            const current=snap.exists()?Number(snap.data().lastNumber||0):0;
+            number=current+1;
+            transaction.set(counterRef,{lastNumber:number,updated:serverTimestamp()},{merge:true});
+        });
+    }catch(error){
+        console.error("Membership counter error:",error);
+        throw new Error("Could not generate a membership number. Please try again.");
+    }
+
+    return "EDL"+String(number).padStart(6,"0");
+}
+
+window.savePatient = async function(){
+    if(!clinicRequire(["Administrator","Receptionist"])) return;
+
+    const name=document.getElementById("patientName")?.value.trim()||"";
+    const dob=document.getElementById("patientDob")?.value||"";
+    const gender=document.getElementById("patientGender")?.value||"";
+    const idNo=document.getElementById("patientId")?.value.trim()||"";
+    const phone=document.getElementById("patientPhone")?.value.trim()||"";
+    const address=document.getElementById("patientAddress")?.value.trim()||"";
+    const occupation=document.getElementById("patientOccupation")?.value.trim()||"";
+    const kin=document.getElementById("patientKin")?.value.trim()||"";
+    const kinPhone=document.getElementById("patientKinPhone")?.value.trim()||"";
+    const history=document.getElementById("patientHistory")?.value.trim()||"";
+    const allergies=document.getElementById("patientAllergies")?.value.trim()||"";
+    const notes=document.getElementById("patientNotes")?.value.trim()||"";
+
+    if(!name || !dob || !gender){
+        alert("Please complete Full Name, Date of Birth and Gender.");
+        return;
+    }
+
+    const button=document.querySelector("#content .btn");
+    if(button) button.disabled=true;
+
+    try{
+        const membershipNo=await clinicNextMembershipNumber();
+        const ref=await addDoc(collection(db,"patients"),{
+            patientNo:membershipNo,
+            membershipNo,
+            status:"Registered",
+            name,dob,gender,idNo,phone,address,occupation,kin,kinPhone,
+            history,allergies,notes,
+            created:serverTimestamp(),
+            registeredBy:window.currentStaff?.id||null
+        });
+
+        alert("Patient registered successfully. Membership No: "+membershipNo);
+
+        if(confirm("Print the membership card now?")){
+            await clinicPrintMembershipCard(ref.id);
+        }
+
+        await drawPatients();
+        await loadDashboard();
+    }catch(error){
+        console.error(error);
+        alert(error.message||"Failed to register patient.");
+    }finally{
+        if(button) button.disabled=false;
+    }
+};
+
+/* ----------------------------------------------------------
+   MEMBERSHIP CARD
+---------------------------------------------------------- */
+async function clinicPrintMembershipCard(patientId){
+    const snap=await getDoc(doc(db,"patients",patientId));
+    if(!snap.exists()){ alert("Patient not found."); return; }
+    const p=snap.data();
+    const w=window.open("","_blank","width=600,height=450");
+    if(!w){ alert("Please allow pop-ups to print the membership card."); return; }
+
+    w.document.write(`<!doctype html><html><head><title>Membership Card - ${clinicEsc(p.patientNo)}</title>
+    <style>
+    body{font-family:Arial,sans-serif;background:#f4f4f4;padding:30px}.card{width:500px;margin:auto;background:#fff;border:2px solid #0b7d4b;border-radius:18px;padding:25px;box-sizing:border-box}.head{text-align:center;color:#0b7d4b}.no{font-size:28px;font-weight:800;text-align:center;margin:18px 0}.row{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding:8px 0}.foot{text-align:center;margin-top:20px;font-size:12px;color:#666}@media print{body{background:#fff;padding:0}.card{box-shadow:none}}
+    </style></head><body><div class="card">
+    <div class="head"><h2>ELEPHANT DENTAL LTD</h2><div>MEMBERSHIP CARD</div></div>
+    <div class="no">${clinicEsc(p.patientNo||p.membershipNo||"")}</div>
+    <div class="row"><b>Name</b><span>${clinicEsc(p.name)}</span></div>
+    <div class="row"><b>Date of Birth</b><span>${clinicEsc(p.dob)}</span></div>
+    <div class="row"><b>Gender</b><span>${clinicEsc(p.gender)}</span></div>
+    <div class="row"><b>Phone</b><span>${clinicEsc(p.phone||"")}</span></div>
+    <div class="foot">Please present this card at every clinic visit.</div>
+    </div><script>window.onload=function(){window.print();};<\/script></body></html>`);
+    w.document.close();
+}
+window.printMembershipCard=clinicPrintMembershipCard;
+
+/* ----------------------------------------------------------
+   APPOINTMENTS
+   Dentist may create follow-ups. Reception may book a patient
+   who has no appointment. Appointment time does NOT override
+   the actual arrival queue.
+---------------------------------------------------------- */
+window.addAppointment=function(patientId){
+    if(!clinicRequire(["Administrator","Receptionist","Dentist"])) return;
+    const today=clinicToday();
+    document.getElementById("patientFileContent").innerHTML=`
+    <div class="card"><h2>New Appointment</h2>
+    <p style="background:#fff3cd;padding:12px;border-radius:8px;">Appointments help organize the clinic, but once a patient arrives, the live queue is based on emergency priority and actual check-in time.</p>
+    <input id="appointmentDate" class="input" type="date" value="${today}">
+    <input id="appointmentTime" class="input" type="time">
+    <select id="appointmentReason" class="input">
+      <option value="">Select Reason</option><option>Consultation</option><option>Toothache</option><option>Extraction</option><option>Filling</option><option>Cleaning</option><option>Root Canal</option><option>Crown</option><option>Denture</option><option>Review</option><option>Emergency</option><option>Other</option>
+    </select>
+    <textarea id="appointmentNotes" class="input" placeholder="Notes"></textarea>
+    <button class="btn" onclick="saveAppointment('${patientId}')">Save Appointment</button>
+    </div>`;
+};
+
+window.saveAppointment=async function(patientId){
+    if(!clinicRequire(["Administrator","Receptionist","Dentist"])) return;
+    const date=document.getElementById("appointmentDate")?.value||"";
+    const time=document.getElementById("appointmentTime")?.value||"";
+    const reason=document.getElementById("appointmentReason")?.value.trim()||"";
+    const notes=document.getElementById("appointmentNotes")?.value.trim()||"";
+    if(!date || !time || !reason){ alert("Please complete Date, Time and Reason."); return; }
+
+    try{
+        await addDoc(collection(db,"appointments"),{
+            patientId,date,time,reason,notes,status:"Booked",
+            createdBy:window.currentStaff?.id||null,
+            createdByName:window.currentStaff?.name||"",
+            createdByRole:clinicRole(window.currentRole),
+            created:serverTimestamp()
+        });
+        alert("Appointment saved successfully.");
+        await showAppointments(patientId);
+    }catch(error){
+        console.error(error);
+        alert("Failed to save appointment.");
+    }
+};
+
+/* ----------------------------------------------------------
+   RECEPTION DESK
+---------------------------------------------------------- */
+async function clinicGetPatientsMap(){
+    const snap=await getDocs(collection(db,"patients"));
+    const map={};
+    snap.forEach(ds=>map[ds.id]={id:ds.id,...ds.data()});
+    return map;
+}
+
+async function clinicGetVisits(){
+    const snap=await getDocs(collection(db,"visits"));
+    return snap.docs.map(ds=>({id:ds.id,...ds.data()}));
+}
+
+function clinicSortQueue(visits){
+    return visits.filter(v=>v.status==="Waiting").sort((a,b)=>{
+        const ea=a.priority==="Emergency"?0:1;
+        const eb=b.priority==="Emergency"?0:1;
+        if(ea!==eb) return ea-eb;
+        return clinicTimestampMs(a.arrivedAt)-clinicTimestampMs(b.arrivedAt);
+    });
+}
+
+async function clinicCreateQueueEntry(patientId,appointmentId,priority="Normal"){
+    const visits=await clinicGetVisits();
+    const existing=visits.find(v=>v.patientId===patientId && ["Waiting","WithDentist","WaitingPayment"].includes(v.status));
+    if(existing) return existing.id;
+
+    const patient=await getDoc(doc(db,"patients",patientId));
+    const p=patient.exists()?patient.data():{};
+    const visitRef=await addDoc(collection(db,"visits"),{
+        patientId,
+        membershipNo:p.patientNo||p.membershipNo||"",
+        appointmentId:appointmentId||null,
+        priority:priority==="Emergency"?"Emergency":"Normal",
+        status:"Waiting",
+        arrivedAt:serverTimestamp(),
+        checkedInBy:window.currentStaff?.id||null,
+        checkedInByName:window.currentStaff?.name||"",
+        created:serverTimestamp()
+    });
+    await updateDoc(doc(db,"patients",patientId),{status:"Waiting",updated:serverTimestamp()});
+    return visitRef.id;
+}
+
+window.checkInPatient=async function(patientId,appointmentId=null,emergency=false){
+    if(!clinicRequire(["Administrator","Receptionist"])) return;
+    try{
+        const visits=await clinicGetVisits();
+        const active=visits.find(v=>v.patientId===patientId && ["Waiting","WithDentist","WaitingPayment"].includes(v.status));
+        if(active){
+            if(emergency && active.status==="Waiting") await updateDoc(doc(db,"visits",active.id),{priority:"Emergency",updated:serverTimestamp()});
+            alert("Patient is already in the clinic workflow.");
+            await clinicShowReceptionDesk();
+            return;
+        }
+        await clinicCreateQueueEntry(patientId,appointmentId,emergency?"Emergency":"Normal");
+        alert(emergency?"Patient admitted as an emergency.":"Patient checked in and added to the waiting queue.");
+        await clinicShowReceptionDesk();
+    }catch(error){
+        console.error(error);
+        alert("Patient could not be checked in.");
+    }
+};
+
+window.markEmergency=async function(visitId){
+    if(!clinicRequire(["Administrator","Receptionist"])) return;
+    await updateDoc(doc(db,"visits",visitId),{priority:"Emergency",updated:serverTimestamp()});
+    await clinicShowReceptionDesk();
+};
+
+async function clinicShowReceptionDesk(){
+    if(!clinicRequire(["Administrator","Receptionist"])) return;
+    document.getElementById("pageTitle").innerHTML="Reception Desk";
+    const content=document.getElementById("content");
+    content.innerHTML=`<div class="card"><h2>Loading Reception Desk...</h2></div>`;
+
+    const patients=await clinicGetPatientsMap();
+    const visits=await clinicGetVisits();
+    const appointmentsSnap=await getDocs(collection(db,"appointments"));
+    const today=clinicToday();
+    const appointments=appointmentsSnap.docs.map(ds=>({id:ds.id,...ds.data()})).filter(a=>a.date===today && a.status!=="Cancelled");
+
+    let apptHtml="";
+    appointments.sort((a,b)=>clinicTimeValue(a.time).localeCompare(clinicTimeValue(b.time)));
+    for(const a of appointments){
+        const p=patients[a.patientId]; if(!p) continue;
+        const checked=visits.find(v=>v.patientId===a.patientId && ["Waiting","WithDentist","WaitingPayment"].includes(v.status));
+        apptHtml+=`<div class="card" style="margin-top:10px;padding:14px;">
+          <b>${clinicEsc(a.time)} — ${clinicEsc(p.name)}</b><br>
+          Membership: <b>${clinicEsc(p.patientNo||p.membershipNo||"")}</b><br>
+          Reason: ${clinicEsc(a.reason)}<br>
+          Status: ${clinicEsc(a.status)}<br>
+          ${checked?`<span style="display:inline-block;padding:6px 9px;border-radius:8px;${clinicStatusClass(checked.status)}">${clinicEsc(clinicStatusLabel(checked.status))}</span>`:
+          `<button class="btn" style="margin-top:8px;" onclick="checkInPatient('${a.patientId}','${a.id}',false)">Check In</button>
+           <button class="btn" style="margin-top:8px;background:#c62828;" onclick="checkInPatient('${a.patientId}','${a.id}',true)">Emergency</button>`}
+        </div>`;
+    }
+    if(!apptHtml) apptHtml="<p>No appointments scheduled for today.</p>";
+
+    const waiting=clinicSortQueue(visits);
+    let waitHtml="";
+    waiting.forEach((v,i)=>{
+        const p=patients[v.patientId]||{};
+        waitHtml+=`<div class="card" style="margin-top:10px;padding:14px;">
+          <b>#${i+1} ${clinicEsc(p.name||"Unknown")}</b><br>
+          Membership: ${clinicEsc(p.patientNo||p.membershipNo||"")}<br>
+          Priority: <b>${clinicEsc(v.priority||"Normal")}</b><br>
+          Arrived: ${clinicEsc(new Date(clinicTimestampMs(v.arrivedAt)||Date.now()).toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}))}<br>
+          <button class="btn" style="margin-top:8px;background:#c62828;" onclick="markEmergency('${v.id}')">Mark Emergency</button>
+        </div>`;
+    });
+    if(!waitHtml) waitHtml="<p>No patients are currently waiting.</p>";
+
+    const paymentVisits=visits.filter(v=>v.status==="WaitingPayment").sort((a,b)=>clinicTimestampMs(a.updated||a.completedAt)-clinicTimestampMs(b.updated||b.completedAt));
+    let payHtml="";
+    for(const v of paymentVisits){
+        const p=patients[v.patientId]||{};
+        const total=await clinicPatientBill(v.patientId);
+        payHtml+=`<div class="card" style="margin-top:10px;padding:14px;">
+          <b>${clinicEsc(p.name||"Unknown")}</b><br>
+          Membership: ${clinicEsc(p.patientNo||p.membershipNo||"")}<br>
+          Amount Due: <b>KES ${total.balance.toLocaleString()}</b><br>
+          <button class="btn" style="margin-top:8px;" onclick="showPayments('${v.patientId}')">PAY NOW</button>
+        </div>`;
+    }
+    if(!payHtml) payHtml="<p>No patients are currently awaiting payment.</p>";
+
+    content.innerHTML=`
+      <div class="card"><h2>Today's Appointments</h2>${apptHtml}</div>
+      <div class="card" style="margin-top:18px;"><h2>Waiting for Dentist</h2><p>Priority is <b>Emergency first</b>, then actual check-in time. A late appointment patient joins according to arrival time.</p>${waitHtml}</div>
+      <div class="card" style="margin-top:18px;"><h2>Awaiting Payment</h2>${payHtml}</div>
+      <div class="card" style="margin-top:18px;"><h2>Find / Register Patient</h2><button class="btn" onclick="showPage('patients')">Open Patient Registration</button></div>`;
+}
+
+/* ----------------------------------------------------------
+   DENTIST QUEUE
+---------------------------------------------------------- */
+window.startVisit=async function(visitId){
+    if(!clinicRequire(["Administrator","Dentist"])) return;
+    const visitSnap=await getDoc(doc(db,"visits",visitId));
+    if(!visitSnap.exists()){alert("Queue record not found.");return;}
+    const v=visitSnap.data();
+    if(v.status!=="Waiting"){alert("This patient is no longer waiting.");return;}
+
+    const currentSnap=await getDocs(query(collection(db,"visits"),where("status","==","WithDentist")));
+    const ownCurrent=currentSnap.docs.find(d=>d.data().dentistId===window.currentStaff?.id);
+    if(ownCurrent){alert("You already have a patient with you. Complete the current clinical session first.");return;}
+
+    await updateDoc(doc(db,"visits",visitId),{
+        status:"WithDentist",dentistId:window.currentStaff?.id||null,
+        dentistName:window.currentStaff?.name||"",startedAt:serverTimestamp(),updated:serverTimestamp()
+    });
+    await updateDoc(doc(db,"patients",v.patientId),{status:"With Dentist",updated:serverTimestamp()});
+    window.activeVisitId=visitId;
+    await clinicShowDentistQueue();
+    await openPatientFile(v.patientId);
+};
+
+window.clinicCompleteVisit=async function(visitId,patientId){
+    if(!clinicRequire(["Administrator","Dentist"])) return;
+    const bill=await clinicPatientBill(patientId);
+    if(bill.total<=0){
+        alert("Record at least one completed clinical charge/treatment before completing the session.");
+        return;
+    }
+    await updateDoc(doc(db,"visits",visitId),{
+        status:"WaitingPayment",completedAt:serverTimestamp(),updated:serverTimestamp()
+    });
+    await updateDoc(doc(db,"patients",patientId),{status:"Waiting Payment",updated:serverTimestamp()});
+    window.activeVisitId=null;
+    alert("Clinical session completed. Patient has been sent to Reception for payment.");
+    await clinicShowDentistQueue();
+};
+
+async function clinicShowDentistQueue(){
+    if(!clinicRequire(["Administrator","Dentist"])) return;
+    document.getElementById("pageTitle").innerHTML="Dentist Queue";
+    const patients=await clinicGetPatientsMap();
+    const visits=await clinicGetVisits();
+    const waiting=clinicSortQueue(visits);
+    const current=visits.find(v=>v.status==="WithDentist" && v.dentistId===window.currentStaff?.id);
+    const waitingPayment=visits.filter(v=>v.status==="WaitingPayment");
+
+    let waitHtml="";
+    waiting.forEach((v,i)=>{
+        const p=patients[v.patientId]||{};
+        waitHtml+=`<div class="card" style="margin-top:10px;padding:14px;">
+          <b>#${i+1} ${clinicEsc(p.name||"")}</b><br>Membership: ${clinicEsc(p.patientNo||p.membershipNo||"")}<br>
+          Priority: <b>${clinicEsc(v.priority||"Normal")}</b><br>
+          <button class="btn" style="margin-top:8px;" onclick="startVisit('${v.id}')">START CONSULTATION</button>
+        </div>`;
+    });
+    if(!waitHtml) waitHtml="<p>No patients waiting.</p>";
+
+    let currentHtml="<p>No current patient.</p>";
+    if(current){
+        const p=patients[current.patientId]||{};
+        currentHtml=`<div class="card" style="margin-top:10px;"><h3>${clinicEsc(p.name||"")}</h3><p>Membership: <b>${clinicEsc(p.patientNo||p.membershipNo||"")}</b></p><p>Status: <b>WITH DENTIST</b></p><button class="btn" onclick="openPatientFile('${current.patientId}')">OPEN CLINICAL FILE</button><button class="btn" style="margin-top:8px;background:#0b7d4b;" onclick="clinicCompleteVisit('${current.id}','${current.patientId}')">COMPLETE CLINICAL SESSION</button></div>`;
+    }
+
+    let doneHtml="";
+    waitingPayment.forEach(v=>{
+        const p=patients[v.patientId]||{};
+        doneHtml+=`<div style="padding:10px;border-bottom:1px solid #ddd;"><b>${clinicEsc(p.name||"")}</b> — Awaiting Payment</div>`;
+    });
+    if(!doneHtml) doneHtml="<p>No patients awaiting payment.</p>";
+
+    document.getElementById("content").innerHTML=`
+      <div class="card"><h2>Current Patient</h2>${currentHtml}</div>
+      <div class="card" style="margin-top:18px;"><h2>Waiting for Dentist</h2><p>Emergency patients are first. Otherwise the earliest actual check-in is next. Appointment time does not make the clinic wait for a late patient.</p>${waitHtml}</div>
+      <div class="card" style="margin-top:18px;"><h2>Completed Clinical Sessions</h2>${doneHtml}</div>`;
+}
+
+/* ----------------------------------------------------------
+   BILLING HELPERS + PAYMENT METHODS
+---------------------------------------------------------- */
+async function clinicPatientBill(patientId){
+    const ts=await getDocs(query(collection(db,"treatments"),where("patientId","==",patientId)));
+    let total=0;
+    ts.forEach(ds=>{
+        const t=ds.data();
+        if(t.status==="Completed") total+=Number(t.cost||0);
+    });
+
+    const ps=await getDocs(query(collection(db,"payments"),where("patientId","==",patientId)));
+    let applied=0,received=0;
+    ps.forEach(ds=>{
+        const p=ds.data();
+        received+=Number(p.amountPaid||0);
+        applied+=Number(p.amountApplied ?? p.amountPaid ?? 0);
+    });
+    return {total,received,applied,balance:Math.max(0,total-applied),payments:ps};
+}
+
+const clinicPaymentMethods=["Cash","M-Pesa","Bank Card","Bank Transfer","SHA","Private Insurance","Cheque","Other"];
+
+window.showPayments=async function(patientId){
+    if(!clinicRequire(["Administrator","Receptionist"])) return;
+    const patientSnap=await getDoc(doc(db,"patients",patientId));
+    if(!patientSnap.exists()){alert("Patient not found.");return;}
+    const p=patientSnap.data();
+    const bill=await clinicPatientBill(patientId);
+
+    const ps=await getDocs(query(collection(db,"payments"),where("patientId","==",patientId)));
+    let history="";
+    ps.forEach(ds=>{
+        const x=ds.data();
+        history+=`<tr><td>${clinicEsc(x.receiptNo)}</td><td>${clinicEsc(x.paymentMethod)}</td><td>KES ${Number(x.amountPaid||0).toLocaleString()}</td><td>KES ${Number(x.amountApplied??x.amountPaid??0).toLocaleString()}</td><td>${clinicEsc(x.date||"")}</td></tr>`;
+    });
+
+    document.getElementById("pageTitle").innerHTML="Payment";
+    document.getElementById("content").innerHTML=`
+    <div class="card"><h2>Patient Payment</h2>
+      <p><b>Patient:</b> ${clinicEsc(p.name)}</p>
+      <p><b>Membership:</b> ${clinicEsc(p.patientNo||p.membershipNo||"")}</p>
+      <p><b>Total Clinical Charges:</b> KES ${bill.total.toLocaleString()}</p>
+      <p><b>Already Applied:</b> KES ${bill.applied.toLocaleString()}</p>
+      <h2 style="color:#0b7d4b;">Balance: KES ${bill.balance.toLocaleString()}</h2>
+      ${bill.balance>0?`<select id="paymentMethod" class="input" onchange="clinicPaymentFields()">${clinicPaymentMethods.map(x=>`<option>${x}</option>`).join("")}</select><div id="paymentFields"></div><button class="btn" onclick="savePayment('${patientId}')">RECEIVE PAYMENT</button>`:`<p style="color:#0b7d4b;font-weight:bold;">This patient's bill is fully settled.</p>`}
+      <hr style="margin:25px 0;"><h3>Payment History</h3><div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;"><tr><th>Receipt</th><th>Method</th><th>Received</th><th>Applied</th><th>Date</th></tr>${history||`<tr><td colspan="5">No payments recorded.</td></tr>`}</table></div>
+    </div>`;
+    clinicPaymentFields();
+};
+
+window.clinicPaymentFields=function(){
+    const method=document.getElementById("paymentMethod")?.value||"Cash";
+    const box=document.getElementById("paymentFields");
+    if(!box) return;
+    let extra="";
+    if(method==="Cash"){
+        extra=`<input id="paymentAmount" class="input" type="number" min="0" step="0.01" placeholder="Amount received"><input id="cashReceived" class="input" type="number" min="0" step="0.01" placeholder="Cash tendered (optional)">`;
+    }else if(method==="M-Pesa"){
+        extra=`<input id="paymentAmount" class="input" type="number" min="0" step="0.01" placeholder="Amount received"><input id="paymentReference" class="input" placeholder="M-Pesa transaction/reference number">`;
+    }else if(method==="Bank Card"){
+        extra=`<input id="paymentAmount" class="input" type="number" min="0" step="0.01" placeholder="Amount received"><input id="paymentReference" class="input" placeholder="Card receipt/reference number">`;
+    }else if(method==="Bank Transfer"){
+        extra=`<input id="paymentAmount" class="input" type="number" min="0" step="0.01" placeholder="Amount received"><input id="paymentReference" class="input" placeholder="Bank transaction/reference number">`;
+    }else if(method==="SHA"){
+        extra=`<input id="paymentAmount" class="input" type="number" min="0" step="0.01" placeholder="Patient contribution received"><input id="coveredAmount" class="input" type="number" min="0" step="0.01" placeholder="SHA amount applied/covered"><input id="paymentReference" class="input" placeholder="SHA claim/reference number"><select id="claimStatus" class="input"><option>Submitted</option><option>Approved</option><option>Pending</option></select>`;
+    }else if(method==="Private Insurance"){
+        extra=`<input id="paymentAmount" class="input" type="number" min="0" step="0.01" placeholder="Patient contribution received"><input id="coveredAmount" class="input" type="number" min="0" step="0.01" placeholder="Insurance amount applied/covered"><input id="insuranceCompany" class="input" placeholder="Insurance company"><input id="policyNumber" class="input" placeholder="Member/policy number"><input id="authorizationNumber" class="input" placeholder="Authorization/pre-authorisation number"><input id="paymentReference" class="input" placeholder="Claim/reference number"><select id="claimStatus" class="input"><option>Submitted</option><option>Approved</option><option>Pending</option></select>`;
+    }else if(method==="Cheque"){
+        extra=`<input id="paymentAmount" class="input" type="number" min="0" step="0.01" placeholder="Amount received"><input id="paymentReference" class="input" placeholder="Cheque number/reference">`;
+    }else{
+        extra=`<input id="paymentAmount" class="input" type="number" min="0" step="0.01" placeholder="Amount received"><input id="paymentReference" class="input" placeholder="Reference/notes">`;
+    }
+    box.innerHTML=extra;
+};
+
+window.savePayment=async function(patientId){
+    if(!clinicRequire(["Administrator","Receptionist"])) return;
+    const method=document.getElementById("paymentMethod")?.value||"";
+    const amount=Number(document.getElementById("paymentAmount")?.value||0);
+    const covered=Number(document.getElementById("coveredAmount")?.value||0);
+    const applied=amount+covered;
+    const bill=await clinicPatientBill(patientId);
+    if(amount<=0 && covered<=0){alert("Enter an amount received or an approved/applied coverage amount.");return;}
+    if(applied<=0 || applied>bill.balance){alert("The amount applied cannot exceed the outstanding balance of KES "+bill.balance.toLocaleString()+".");return;}
+
+    const receiptNo="RCP-"+Date.now();
+    const data={
+        receiptNo,patientId,paymentMethod:method,
+        amountPaid:amount,coveredAmount:covered,amountApplied:applied,
+        balance:bill.balance-applied,date:clinicToday(),created:serverTimestamp(),
+        receivedBy:window.currentStaff?.id||null,
+        receivedByName:window.currentStaff?.name||"",
+        reference:document.getElementById("paymentReference")?.value.trim()||"",
+        claimStatus:document.getElementById("claimStatus")?.value||"",
+        insuranceCompany:document.getElementById("insuranceCompany")?.value.trim()||"",
+        policyNumber:document.getElementById("policyNumber")?.value.trim()||"",
+        authorizationNumber:document.getElementById("authorizationNumber")?.value.trim()||""
+    };
+
+    try{
+        await addDoc(collection(db,"payments"),data);
+        const remaining=bill.balance-applied;
+        if(remaining<=0){
+            const visits=await clinicGetVisits();
+            const active=visits.find(v=>v.patientId===patientId && v.status==="WaitingPayment");
+            if(active) await updateDoc(doc(db,"visits",active.id),{status:"Completed",paidAt:serverTimestamp(),updated:serverTimestamp()});
+            await updateDoc(doc(db,"patients",patientId),{status:"Completed",updated:serverTimestamp()});
+        }
+        alert("Payment recorded successfully. Receipt: "+receiptNo);
+        await clinicPrintLatestReceipt(patientId);
+        await clinicShowReceptionDesk();
+    }catch(error){
+        console.error(error);
+        alert("Payment could not be recorded.");
+    }
+};
+
+async function clinicPrintLatestReceipt(patientId){
+    const pSnap=await getDoc(doc(db,"patients",patientId));
+    if(!pSnap.exists()) return;
+    const p=pSnap.data();
+    const ps=await getDocs(query(collection(db,"payments"),where("patientId","==",patientId)));
+    if(ps.empty) return;
+    let latest=null,latestMs=-1;
+    ps.forEach(ds=>{
+        const x=ds.data(); const ms=clinicTimestampMs(x.created);
+        if(ms>=latestMs){latest={...x};latestMs=ms;}
+    });
+    if(!latest) return;
+    const w=window.open("","_blank","width=700,height=850");
+    if(!w){alert("Please allow pop-ups to print the receipt.");return;}
+    w.document.write(`<!doctype html><html><head><title>${clinicEsc(latest.receiptNo)}</title><style>body{font-family:Arial;padding:30px}h2{text-align:center}table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #ddd}</style></head><body><h2>ELEPHANT DENTAL LTD</h2><p><b>Receipt:</b> ${clinicEsc(latest.receiptNo)}</p><p><b>Patient:</b> ${clinicEsc(p.name)}</p><p><b>Membership:</b> ${clinicEsc(p.patientNo||p.membershipNo||"")}</p><p><b>Date:</b> ${clinicEsc(latest.date)}</p><p><b>Payment Method:</b> ${clinicEsc(latest.paymentMethod)}</p><p><b>Amount Received:</b> KES ${Number(latest.amountPaid||0).toLocaleString()}</p><p><b>Coverage Applied:</b> KES ${Number(latest.coveredAmount||0).toLocaleString()}</p><p><b>Total Applied:</b> KES ${Number(latest.amountApplied||0).toLocaleString()}</p><p><b>Reference:</b> ${clinicEsc(latest.reference||"")}</p><hr><p style="text-align:center;">Thank you for visiting Elephant Dental Ltd.</p><script>window.onload=function(){window.print();};<\/script></body></html>`);
+    w.document.close();
+}
+window.printReceipt=clinicPrintLatestReceipt;
+
+/* ----------------------------------------------------------
+   DENTIST APPOINTMENTS: show today's and upcoming appointments
+---------------------------------------------------------- */
+window.showPageAppointments=async function(){
+    if(!clinicRequire(["Administrator","Receptionist","Dentist"])) return;
+    document.getElementById("pageTitle").innerHTML="Appointments";
+    const patients=await clinicGetPatientsMap();
+    const snap=await getDocs(collection(db,"appointments"));
+    const rows=snap.docs.map(ds=>({id:ds.id,...ds.data()})).sort((a,b)=>String(a.date).localeCompare(String(b.date))||String(a.time).localeCompare(String(b.time)));
+    let html=`<div class="card"><h2>Appointments</h2>`;
+    rows.forEach(a=>{
+        const p=patients[a.patientId]||{};
+        html+=`<div class="card" style="margin-top:10px;padding:14px;"><b>${clinicEsc(p.name||"Unknown")}</b> — ${clinicEsc(p.patientNo||p.membershipNo||"")}<br>${clinicEsc(a.date)} ${clinicEsc(a.time)}<br>Reason: ${clinicEsc(a.reason)}<br>Status: ${clinicEsc(a.status)}<br><button class="btn" style="margin-top:8px;" onclick="openPatientFile('${a.patientId}')">Open Patient</button>${clinicRole(window.currentRole)!=="Dentist"?`<button class="btn" style="margin-top:8px;" onclick="checkInPatient('${a.patientId}','${a.id}',false)">Check In</button>`:""}</div>`;
+    });
+    if(!rows.length) html+="<p>No appointments recorded.</p>";
+    html+=`</div>`;
+    document.getElementById("content").innerHTML=html;
+};
+
+
+/* ----------------------------------------------------------
+   PATIENT DESK - Receptionist registers/searches patients.
+   Dentist can search/open existing patients but cannot register.
+---------------------------------------------------------- */
+async function clinicShowPatientsPage(){
+    if(!clinicRequire(["Administrator","Receptionist","Dentist"])) return;
+    document.getElementById("pageTitle").innerHTML="Patients";
+    const canRegister=clinicRole(window.currentRole)!=="Dentist";
+    document.getElementById("content").innerHTML=`
+      <div class="card">
+        <h2>Patient Search</h2>
+        <input id="searchPatient" class="input" placeholder="Search membership number, name, phone or ID" oninput="drawPatients()">
+      </div>
+      ${canRegister?`<div class="card" style="margin-top:18px;">
+        <h2>Register New Patient</h2>
+        <p>Membership number is generated automatically by the system.</p>
+        <input id="patientName" class="input" placeholder="Full Name">
+        <input id="patientDob" class="input" type="date" placeholder="Date of Birth">
+        <select id="patientGender" class="input"><option value="">Select Gender</option><option>Male</option><option>Female</option><option>Other</option></select>
+        <input id="patientId" class="input" placeholder="National ID / Passport Number">
+        <input id="patientPhone" class="input" placeholder="Phone Number">
+        <input id="patientAddress" class="input" placeholder="Address">
+        <input id="patientOccupation" class="input" placeholder="Occupation">
+        <input id="patientKin" class="input" placeholder="Next of Kin">
+        <input id="patientKinPhone" class="input" placeholder="Next of Kin Phone">
+        <textarea id="patientHistory" class="input" placeholder="Medical Conditions / History"></textarea>
+        <textarea id="patientAllergies" class="input" placeholder="Drug Allergies"></textarea>
+        <textarea id="patientNotes" class="input" placeholder="Notes"></textarea>
+        <button class="btn" onclick="savePatient()">REGISTER PATIENT</button>
+      </div>`:""}
+      <div class="card" style="margin-top:18px;"><h2>Patient Records</h2><div id="patientsList">Loading...</div></div>`;
+    await drawPatients();
+}
+
+
+/* ----------------------------------------------------------
+   FINAL PATIENT LIST
+---------------------------------------------------------- */
+window.drawPatients=async function(){
+    const holder=document.getElementById("patientsList");
+    if(!holder) return;
+    const search=(document.getElementById("searchPatient")?.value||"").trim().toLowerCase();
+    const snap=await getDocs(collection(db,"patients"));
+    const role=clinicRole(window.currentRole);
+    let html="";
+
+    snap.forEach(ds=>{
+        const p=ds.data()||{};
+        const text=[p.patientNo,p.membershipNo,p.name,p.phone,p.idNo].join(" ").toLowerCase();
+        if(search && !text.includes(search)) return;
+
+        let actions=`<button class="btn" style="background:#1565c0;" onclick="openPatientFile('${ds.id}')">OPEN FILE</button>`;
+        if(role==="Receptionist"){
+            actions+=`<button class="btn" style="margin-top:8px;" onclick="checkInPatient('${ds.id}',null,false)">CHECK IN / WALK-IN</button>`;
+            actions+=`<button class="btn" style="margin-top:8px;background:#c62828;" onclick="checkInPatient('${ds.id}',null,true)">EMERGENCY</button>`;
+            actions+=`<button class="btn" style="margin-top:8px;" onclick="addAppointment('${ds.id}')">BOOK APPOINTMENT</button>`;
+        }else if(role==="Administrator"){
+            actions+=`<button class="btn" style="margin-top:8px;" onclick="editPatient('${ds.id}')">EDIT</button>`;
+            actions+=`<button class="btn" style="margin-top:8px;background:#c62828;" onclick="deletePatient('${ds.id}')">DELETE</button>`;
+        }
+
+        html+=`<div class="card" style="margin-top:12px;">
+          <h3 style="color:#0b7d4b;">${clinicEsc(p.patientNo||p.membershipNo||"")}</h3>
+          <h3>${clinicEsc(p.name||"")}</h3>
+          <p><b>Phone:</b> ${clinicEsc(p.phone||"")}</p>
+          <p><b>DOB:</b> ${clinicEsc(p.dob||"")} &nbsp; <b>Gender:</b> ${clinicEsc(p.gender||"")}</p>
+          <p><b>Current Status:</b> ${clinicEsc(p.status||"Registered")}</p>
+          <div style="margin-top:10px;">${actions}</div>
+        </div>`;
+    });
+
+    holder.innerHTML=html||"<p>No patient records found.</p>";
+    const total=document.getElementById("totalPatients");
+    if(total) total.textContent=snap.size;
+};
+
+/* ----------------------------------------------------------
+   ADMIN PAYMENT HISTORY
+---------------------------------------------------------- */
+async function clinicShowPaymentHistory(){
+    if(!clinicRequire(["Administrator"])) return;
+    document.getElementById("pageTitle").innerHTML="Payment History";
+    const patients=await clinicGetPatientsMap();
+    const snap=await getDocs(collection(db,"payments"));
+    const rows=snap.docs.map(ds=>({id:ds.id,...ds.data()})).sort((a,b)=>String(b.date||"").localeCompare(String(a.date||"")));
+    let html=`<div class="card"><h2>Payment History</h2><div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;"><tr><th>Receipt</th><th>Patient</th><th>Method</th><th>Received</th><th>Applied</th><th>Date</th></tr>`;
+    rows.forEach(x=>{
+        const p=patients[x.patientId]||{};
+        html+=`<tr><td>${clinicEsc(x.receiptNo)}</td><td>${clinicEsc(p.name||x.patientId)}</td><td>${clinicEsc(x.paymentMethod)}</td><td>KES ${Number(x.amountPaid||0).toLocaleString()}</td><td>KES ${Number(x.amountApplied??x.amountPaid??0).toLocaleString()}</td><td>${clinicEsc(x.date||"")}</td></tr>`;
+    });
+    html+=`</table></div>${rows.length?"":"<p>No payments recorded.</p>"}</div>`;
+    document.getElementById("content").innerHTML=html;
+}
+
+/* ----------------------------------------------------------
+   FINAL PAGE ROUTER
+---------------------------------------------------------- */
+const clinicBaseShowPage=window.showPage;
+window.showPage=async function(page){
+    const role=clinicRole(window.currentRole);
+
+    if(page==="home"){
+        if(role==="Receptionist") return clinicShowReceptionDesk();
+        if(role==="Dentist") return clinicShowDentistQueue();
+        document.getElementById("pageTitle").innerHTML="Dashboard";
+        document.getElementById("content").innerHTML=`<div class="card"><h2>Elephant Dental Ltd</h2><p>Welcome, ${clinicEsc(window.currentStaff?.name||"")}.</p><p>Role: <b>Administrator</b></p></div>`;
+        await loadDashboard();
+        return;
+    }
+
+    if(page==="patients") return clinicShowPatientsPage();
+    if(page==="appointments") return window.showPageAppointments();
+    if(page==="dentist") return clinicShowDentistQueue();
+    if(page==="payments"){
+        if(role==="Receptionist") return clinicShowReceptionDesk();
+        if(role==="Administrator") return clinicShowPaymentHistory();
+    }
+    if(page==="inventory"){
+        if(!clinicRequire(["Administrator"])) return;
+        return window.showInventory();
+    }
+    if(page==="reports"){
+        if(!clinicRequire(["Administrator"])) return;
+        return window.showReports();
+    }
+    if(page==="staff") return window.showStaff();
+    if(page==="settings") return window.showSettings();
+    if(page==="prices"){
+        if(!clinicRequire(["Administrator"])) return;
+        return window.showTreatmentPrices();
+    }
+    if(page==="treatments"){
+        if(!clinicRequire(["Administrator","Dentist"])) return;
+        const snap=await getDocs(collection(db,"treatments"));
+        let html=`<div class="card"><h2>Clinical Treatments</h2>`;
+        snap.docs.slice(-100).reverse().forEach(ds=>{
+            const t=ds.data();
+            html+=`<div style="padding:12px 0;border-bottom:1px solid #ddd;"><b>${clinicEsc(t.procedure)}</b> — KES ${Number(t.cost||0).toLocaleString()}<br>Date: ${clinicEsc(t.date||"")} | Patient: ${clinicEsc(t.patientId||"")} | Status: ${clinicEsc(t.status||"")}</div>`;
+        });
+        if(!snap.size) html+="<p>No treatment records.</p>";
+        html+=`</div>`;
+        document.getElementById("content").innerHTML=html;
+        return;
+    }
+
+    /* Fall back only for legacy pages that still have a real handler. */
+    if(typeof clinicBaseShowPage === "function") return clinicBaseShowPage(page);
+    alert("This section is not available.");
+};
+
+/* ----------------------------------------------------------
+   FACTORY RESET - DEVELOPER / HANDOVER RESET - ADMINISTRATOR ONLY
+   Preserves Administrator staff accounts only. Deletes all
+   clinic operational/master data and non-admin staff.
+---------------------------------------------------------- */
+const clinicResetCollections=[
+    "patients","appointments","visits","examinations","dentalChart",
+    "treatments","prescriptions","payments","invoices","inventory",
+    "stockHistory","procedureMaterials","treatmentPrices"
+];
+
+async function clinicDeleteCollection(name){
+    const snap=await getDocs(collection(db,name));
+    for(const ds of snap.docs){
+        await deleteDoc(doc(db,name,ds.id));
+    }
+}
+
+window.factoryResetClinic=async function(){
+    if(!clinicRequire(["Administrator"])) return;
+
+    const password=prompt("Enter your Administrator PIN/password to continue:");
+    if(password===null) return;
+    const currentPin=String(window.currentStaff?.pin??"").trim();
+    if(String(password).trim()!==currentPin){
+        alert("Administrator verification failed. Nothing was reset.");
+        return;
+    }
+
+    const confirmation=prompt("This permanently deletes clinic data. Type RESET CLINIC to continue:");
+    if(confirmation!=="RESET CLINIC"){
+        alert("Factory reset cancelled. Nothing was changed.");
+        return;
+    }
+
+    if(!confirm("FINAL WARNING: all patients, appointments, clinical records, payments, inventory, treatment prices and non-admin staff will be deleted. Continue?")) return;
+
+    try{
+        const resetButton=document.getElementById("factoryResetBtn");
+        if(resetButton){resetButton.disabled=true;resetButton.textContent="RESETTING...";}
+
+        for(const name of clinicResetCollections){
+            await clinicDeleteCollection(name);
+        }
+
+        const staffSnap=await getDocs(collection(db,"staff"));
+        for(const ds of staffSnap.docs){
+            const s=ds.data()||{};
+            if(clinicRole(s.role)!=="Administrator") await deleteDoc(doc(db,"staff",ds.id));
+        }
+
+        const counterRef=doc(db,"counters","patients");
+        await deleteDoc(counterRef).catch(()=>{});
+        await deleteDoc(doc(db,"settings","clinic")).catch(()=>{});
+
+        alert("Factory reset completed successfully. Administrator account(s) remain. The system is ready for fresh clinic setup.");
+        window.location.reload();
+    }catch(error){
+        console.error("Factory reset error:",error);
+        alert("Factory reset could not be completed. Check the browser console and Firestore permissions before trying again.");
+        const resetButton=document.getElementById("factoryResetBtn");
+        if(resetButton){resetButton.disabled=false;resetButton.textContent="FACTORY RESET";}
+    }
+};
+
+
+/* ==========================================================
+   CLEAR CLINIC DATA — KEEP ALL STAFF
+   Separate from the developer/handover Factory Reset.
+========================================================== */
+window.clearClinicDataKeepStaff=async function(){
+    if(!clinicRequire(["Administrator"])) return;
+
+    const password=prompt("Enter your Administrator PIN/password to continue:");
+    if(password===null) return;
+
+    const currentPin=String(window.currentStaff?.pin??"").trim();
+    if(String(password).trim()!==currentPin){
+        alert("Administrator verification failed. Nothing was cleared.");
+        return;
+    }
+
+    const confirmation=prompt(
+        "This permanently clears clinic operational data but KEEPS ALL STAFF ACCOUNTS. Type CLEAR CLINIC DATA to continue:"
+    );
+    if(confirmation!=="CLEAR CLINIC DATA"){
+        alert("Clinic data reset cancelled. Nothing was changed.");
+        return;
+    }
+
+    if(!confirm(
+        "FINAL WARNING: patients, appointments, clinical records, payments, inventory, stock history, treatment prices and related clinic data will be deleted. ALL STAFF ACCOUNTS WILL REMAIN. Continue?"
+    )) return;
+
+    try{
+        const resetButton=document.getElementById("clearClinicDataBtn");
+        if(resetButton){
+            resetButton.disabled=true;
+            resetButton.textContent="CLEARING...";
+        }
+
+        for(const name of clinicResetCollections){
+            await clinicDeleteCollection(name);
+        }
+
+        await deleteDoc(doc(db,"counters","patients")).catch(()=>{});
+        await deleteDoc(doc(db,"settings","clinic")).catch(()=>{});
+
+        alert("Clinic data cleared successfully. All staff accounts remain.");
+        window.location.reload();
+    }catch(error){
+        console.error("Clinic data reset error:",error);
+        alert("Clinic data could not be cleared. Check the browser console and Firestore permissions before trying again.");
+        const resetButton=document.getElementById("clearClinicDataBtn");
+        if(resetButton){
+            resetButton.disabled=false;
+            resetButton.textContent="CLEAR CLINIC DATA — KEEP STAFF";
+        }
+    }
+};
+
+
+window.showSettings=async function(){
+    if(!clinicRequire(["Administrator"])) return;
+    const ref=doc(db,"settings","clinic");
+    const snap=await getDoc(ref);
+    const s=snap.exists()?snap.data():{};
+    document.getElementById("pageTitle").innerHTML="Settings";
+    document.getElementById("content").innerHTML=`
+      <div class="card"><h2>Clinic Settings</h2>
+        <input id="setClinicName" class="input" value="${clinicEsc(s.name||"Elephant Dental Ltd")}" placeholder="Clinic Name">
+        <input id="setPhone" class="input" value="${clinicEsc(s.phone||"")}" placeholder="Clinic Phone">
+        <input id="setEmail" class="input" value="${clinicEsc(s.email||"")}" placeholder="Clinic Email">
+        <input id="setAddress" class="input" value="${clinicEsc(s.address||"")}" placeholder="Clinic Address">
+        <input id="setReceiptFooter" class="input" value="${clinicEsc(s.receiptFooter||"Thank you for visiting Elephant Dental Ltd.")}" placeholder="Receipt Footer">
+        <button class="btn" onclick="saveSettings()">Save Settings</button>
+      </div>
+      <div class="card" style="margin-top:20px;border:2px solid #c62828;">
+        <h2 style="color:#c62828;">⚠ Factory Reset</h2>
+        <p>This permanently removes clinic data, including patients, appointments, clinical records, payments, inventory, treatment prices and all non-Administrator staff.</p>
+        <p><b>Administrator account(s) remain.</b></p>
+        <button id="factoryResetBtn" class="btn" style="background:#c62828;" onclick="factoryResetClinic()">FACTORY RESET</button>
+           <button id="clearClinicDataBtn" class="btn" style="background:#8e44ad !important;margin-top:10px;" onclick="clearClinicDataKeepStaff()">CLEAR CLINIC DATA — KEEP STAFF</button>
+           <p style="margin-top:10px;color:#555;"><b>Clinic Data Reset:</b> clears clinic operational data but keeps every staff account, including Administrator, Receptionists and Dentists.</p>
+      </div>`;
+};
+
+/* Keep administrator settings save handler but make it safe. */
+window.saveSettings=async function(){
+    if(!clinicRequire(["Administrator"])) return;
+    await setDoc(doc(db,"settings","clinic"),{
+        name:document.getElementById("setClinicName")?.value.trim()||"Elephant Dental Ltd",
+        phone:document.getElementById("setPhone")?.value.trim()||"",
+        email:document.getElementById("setEmail")?.value.trim()||"",
+        address:document.getElementById("setAddress")?.value.trim()||"",
+        receiptFooter:document.getElementById("setReceiptFooter")?.value.trim()||"",
+        updated:serverTimestamp()
+    },{merge:true});
+    alert("Settings saved successfully.");
+};
+
+/* ----------------------------------------------------------
+   FINAL ROLE ROUTING: menu labels match actual roles.
+---------------------------------------------------------- */
+setTimeout(()=>clinicApplyRole(window.currentRole||""),0);
+
+
+
+
+/* ==========================================================
+   FINAL UI + BILLING + REPORTING + RECEIPT UPDATE
+   Reception payments are the only payment workflow.
+   Reception buttons are pink; dentist clinical actions remain
+   visually separate where rendered by the dentist queue.
+========================================================== */
+(function(){
+    const RECEIPT_LOGO = "https://i.ibb.co/yF0K9MTh/20260824-044210.jpg";
+    const PINK = "#d9468a";
+    const PINK_DARK = "#b83270";
+
+    function money(n){ return "KES " + Number(n||0).toLocaleString("en-KE",{minimumFractionDigits:0,maximumFractionDigits:2}); }
+    function dateOnly(d){ return String(d||"").slice(0,10); }
+    function escapeHtml(v){ return String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;"); }
+    function role(){ return clinicRole(window.currentRole); }
+
+    /* Pink action buttons across the application. */
+    const pinkStyle=document.createElement("style");
+    pinkStyle.textContent=`
+      .btn{background:${PINK} !important;}
+      .btn:hover{background:${PINK_DARK} !important;}
+      .btn[style*="#c62828"],.btn[style*="#d9534f"]{background:#c62828 !important;}
+      .btn[style*="#1565c0"]{background:#1565c0 !important;}
+      .receptionBtn{background:${PINK} !important;color:#fff !important;}
+      .receptionBtn:hover{background:${PINK_DARK} !important;}
+      .payment-status{margin-top:10px;padding:13px 15px;border-radius:12px;font-weight:700;font-size:15px;}
+      .payment-status.insufficient{background:#fff0f0;color:#c62828;border:1px solid #ef9a9a;}
+      .payment-status.exact{background:#e9f8ef;color:#087a48;border:1px solid #79c99d;}
+      .payment-status.excess{background:#fff4e5;color:#a85b00;border:1px solid #f0bd72;}
+      .payment-input-valid{border:2px solid #15945b !important;background:#f1fff7 !important;}
+      .payment-input-invalid{border:2px solid #d32f2f !important;background:#fff7f7 !important;}
+      .payment-input-excess{border:2px solid #e28a17 !important;background:#fffaf1 !important;}
+      .reportToolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:15px;}
+      .reportToolbar .btn{width:auto;min-width:145px;}
+      .reportRange{background:#f8fafc;border-radius:14px;padding:15px;border:1px solid #e5e7eb;margin:15px 0;}
+      .reportTable{width:100%;border-collapse:collapse;}
+      .reportTable th,.reportTable td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;}
+      .reportTable th{background:#f6f7fb;}
+    `;
+    document.head.appendChild(pinkStyle);
+
+    /* ------------------------------------------------------
+       PAYMENT PANEL
+    ------------------------------------------------------ */
+    window.currentPaymentPatientId=null;
+    window.currentPaymentBalance=0;
+
+    window.showPayments=async function(patientId){
+        if(!clinicRequire(["Administrator","Receptionist"])) return;
+        const pSnap=await getDoc(doc(db,"patients",patientId));
+        if(!pSnap.exists()){alert("Patient not found.");return;}
+        const p=pSnap.data();
+        const bill=await clinicPatientBill(patientId);
+        window.currentPaymentPatientId=patientId;
+        window.currentPaymentBalance=bill.balance;
+
+        const ps=await getDocs(query(collection(db,"payments"),where("patientId","==",patientId)));
+        let history="";
+        ps.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>String(b.date||"").localeCompare(String(a.date||""))).forEach(x=>{
+            const received=Number(x.amountPaid||0), applied=Number(x.amountApplied??x.amountPaid??0), change=Number(x.changeGiven||Math.max(0,received-applied));
+            history+=`<tr>
+              <td>${clinicEsc(x.receiptNo)}</td>
+              <td>${clinicEsc(x.paymentMethod)}</td>
+              <td>${money(received)}</td>
+              <td>${money(applied)}</td>
+              <td>${money(change)}</td>
+              <td>${clinicEsc(x.date||"")}</td>
+            </tr>`;
+        });
+
+        document.getElementById("pageTitle").innerHTML="Reception Payment";
+        document.getElementById("content").innerHTML=`
+          <div class="card">
+            <h2>Patient Payment</h2>
+            <p><b>Patient:</b> ${clinicEsc(p.name||"")}</p>
+            <p><b>Membership:</b> ${clinicEsc(p.patientNo||p.membershipNo||"")}</p>
+            <p><b>Total Clinical Charges:</b> ${money(bill.total)}</p>
+            <p><b>Already Applied:</b> ${money(bill.applied)}</p>
+            <h2 style="color:#087a48;">Amount Due: ${money(bill.balance)}</h2>
+            ${bill.balance>0 ? `
+              <select id="paymentMethod" class="input" onchange="clinicPaymentFields()">
+                ${clinicPaymentMethods.map(x=>`<option value="${clinicEsc(x)}">${clinicEsc(x)}</option>`).join("")}
+              </select>
+              <div id="paymentFields"></div>
+              <button id="receivePaymentBtn" class="btn receptionBtn" onclick="savePayment('${patientId}')">RECEIVE PAYMENT</button>
+            ` : `<div class="payment-status exact">This patient's bill is fully settled.</div>`}
+            <hr style="margin:25px 0;">
+            <h3>Payment History</h3>
+            <div style="overflow-x:auto;">
+              <table class="reportTable">
+                <tr><th>Receipt</th><th>Method</th><th>Received</th><th>Applied</th><th>Change</th><th>Date</th></tr>
+                ${history||`<tr><td colspan="6">No payments recorded.</td></tr>`}
+              </table>
+            </div>
+          </div>`;
+        clinicPaymentFields();
+    };
+
+    window.clinicPaymentFields=function(){
+        const method=document.getElementById("paymentMethod")?.value||"Cash";
+        const box=document.getElementById("paymentFields");
+        if(!box) return;
+        let extra=`<input id="paymentAmount" class="input" type="number" min="0" step="0.01" placeholder="Amount received / applied">`;
+        if(method==="M-Pesa") extra+=`<input id="paymentReference" class="input" placeholder="M-Pesa transaction/reference number">`;
+        else if(method==="Bank Card") extra+=`<input id="paymentReference" class="input" placeholder="Card receipt/reference number">`;
+        else if(method==="Bank Transfer") extra+=`<input id="paymentReference" class="input" placeholder="Bank transaction/reference number">`;
+        else if(method==="Cheque") extra+=`<input id="paymentReference" class="input" placeholder="Cheque number/reference">`;
+        else if(method==="SHA") extra+=`<input id="coveredAmount" class="input" type="number" min="0" step="0.01" placeholder="SHA covered amount (optional)"><input id="paymentReference" class="input" placeholder="SHA claim/reference number"><select id="claimStatus" class="input"><option>Submitted</option><option>Approved</option><option>Pending</option></select>`;
+        else if(method==="Private Insurance") extra+=`<input id="coveredAmount" class="input" type="number" min="0" step="0.01" placeholder="Insurance covered amount (optional)"><input id="insuranceCompany" class="input" placeholder="Insurance company"><input id="policyNumber" class="input" placeholder="Member / policy number"><input id="authorizationNumber" class="input" placeholder="Authorization / pre-authorisation number"><input id="paymentReference" class="input" placeholder="Claim/reference number"><select id="claimStatus" class="input"><option>Submitted</option><option>Approved</option><option>Pending</option></select>`;
+        else extra+=`<input id="paymentReference" class="input" placeholder="Reference / notes (optional)">`;
+        extra+=`<div id="paymentStatus" class="payment-status insufficient">Enter the amount received.</div>`;
+        box.innerHTML=extra;
+        const amount=document.getElementById("paymentAmount");
+        if(amount) amount.addEventListener("input",clinicUpdatePaymentVisual);
+        const covered=document.getElementById("coveredAmount");
+        if(covered) covered.addEventListener("input",clinicUpdatePaymentVisual);
+        clinicUpdatePaymentVisual();
+    };
+
+    window.clinicUpdatePaymentVisual=function(){
+        const amount=Number(document.getElementById("paymentAmount")?.value||0);
+        const covered=Number(document.getElementById("coveredAmount")?.value||0);
+        const received=amount+covered;
+        const due=Number(window.currentPaymentBalance||0);
+        const status=document.getElementById("paymentStatus");
+        const input=document.getElementById("paymentAmount");
+        const button=document.getElementById("receivePaymentBtn");
+        if(!status) return;
+        status.className="payment-status";
+        if(received<=0){
+            status.classList.add("insufficient");
+            status.textContent=`Enter amount. Amount due: ${money(due)}`;
+            input?.classList.remove("payment-input-valid","payment-input-excess");
+            input?.classList.add("payment-input-invalid");
+            if(button) button.disabled=true;
+            return;
+        }
+        if(received<due){
+            status.classList.add("insufficient");
+            status.textContent=`NOT ENOUGH — ${money(due-received)} still required`;
+            input?.classList.remove("payment-input-valid","payment-input-excess");
+            input?.classList.add("payment-input-invalid");
+            if(button) button.disabled=false;
+            return;
+        }
+        if(received===due){
+            status.classList.add("exact");
+            status.textContent=`PAYMENT COMPLETE — ${money(received)} applied`;
+            input?.classList.remove("payment-input-invalid","payment-input-excess");
+            input?.classList.add("payment-input-valid");
+            if(button) button.disabled=false;
+            return;
+        }
+        status.classList.add("excess");
+        status.textContent=`OVERPAYMENT — ${money(received-due)} change due. ${money(received)} will be recorded as received.`;
+        input?.classList.remove("payment-input-invalid","payment-input-valid");
+        input?.classList.add("payment-input-excess");
+        if(button) button.disabled=false;
+    };
+
+    window.savePayment=async function(patientId){
+        if(!clinicRequire(["Administrator","Receptionist"])) return;
+        const method=document.getElementById("paymentMethod")?.value||"Cash";
+        const amount=Number(document.getElementById("paymentAmount")?.value||0);
+        const covered=Number(document.getElementById("coveredAmount")?.value||0);
+        const received=amount+covered;
+        const bill=await clinicPatientBill(patientId);
+        if(received<=0){alert("Enter a payment amount.");return;}
+        if(bill.balance<=0){alert("This patient's bill is already fully settled.");return;}
+        const applied=Math.min(received,bill.balance);
+        const change=Math.max(0,received-bill.balance);
+        const remaining=Math.max(0,bill.balance-applied);
+        const receiptNo="RCP-"+Date.now();
+        const data={
+            receiptNo,patientId,paymentMethod:method,
+            amountPaid:received,amountReceived:received,coveredAmount:covered,
+            amountApplied:applied,changeGiven:change,balance:remaining,
+            date:clinicToday(),created:serverTimestamp(),
+            receivedBy:window.currentStaff?.id||null,
+            receivedByName:window.currentStaff?.name||"",
+            reference:document.getElementById("paymentReference")?.value.trim()||"",
+            claimStatus:document.getElementById("claimStatus")?.value||"",
+            insuranceCompany:document.getElementById("insuranceCompany")?.value.trim()||"",
+            policyNumber:document.getElementById("policyNumber")?.value.trim()||"",
+            authorizationNumber:document.getElementById("authorizationNumber")?.value.trim()||""
+        };
+        try{
+            await addDoc(collection(db,"payments"),data);
+            if(remaining<=0){
+                const visits=await clinicGetVisits();
+                const active=visits.find(v=>v.patientId===patientId && v.status==="WaitingPayment");
+                if(active) await updateDoc(doc(db,"visits",active.id),{status:"Completed",paidAt:serverTimestamp(),updated:serverTimestamp()});
+                await updateDoc(doc(db,"patients",patientId),{status:"Completed",updated:serverTimestamp()});
+            }
+            alert(`Payment recorded successfully.\nReceived: ${money(received)}\nApplied: ${money(applied)}${change>0?`\nChange: ${money(change)}`:""}\nReceipt: ${receiptNo}`);
+            await clinicPrintLatestReceipt(patientId);
+            await clinicShowReceptionDesk();
+        }catch(error){
+            console.error(error);
+            alert("Payment could not be recorded.");
+        }
+    };
+
+    /* ------------------------------------------------------
+       MODERN A4 RECEIPT
+    ------------------------------------------------------ */
+    window.clinicPrintLatestReceipt=async function(patientId){
+        const pSnap=await getDoc(doc(db,"patients",patientId));
+        if(!pSnap.exists()) return;
+        const p=pSnap.data();
+        const ps=await getDocs(query(collection(db,"payments"),where("patientId","==",patientId)));
+        if(ps.empty){alert("No payment has been recorded for this patient.");return;}
+        let latest=null,latestMs=-1;
+        ps.forEach(ds=>{const x=ds.data();const ms=clinicTimestampMs(x.created);if(ms>=latestMs){latest={...x};latestMs=ms;}});
+        if(!latest) return;
+        const settingsSnap=await getDoc(doc(db,"settings","clinic"));
+        const settings=settingsSnap.exists()?settingsSnap.data():{};
+        const clinicName=settings.name||"Elephant Dental Ltd";
+        const clinicPhone=settings.phone||"";
+        const clinicEmail=settings.email||"";
+        const clinicAddress=settings.address||"";
+        const dentistPhone=settings.dentistPhone||"";
+        const footer=settings.receiptFooter||"Thank you for visiting Elephant Dental Ltd.";
+        const bill=await clinicPatientBill(patientId);
+        const tq=await getDocs(query(collection(db,"treatments"),where("patientId","==",patientId)));
+        let rows="";
+        tq.docs.forEach(ds=>{const t=ds.data();if(t.status==="Completed"){const cost=Number(t.cost||0);rows+=`<tr><td>${escapeHtml(t.procedure||"Clinical Service")}</td><td>${escapeHtml(t.tooth||"-")}</td><td class="amount">${money(cost)}</td></tr>`;}});
+        const received=Number(latest.amountReceived??latest.amountPaid??0);
+        const covered=Number(latest.coveredAmount||0);
+        const applied=Number(latest.amountApplied??Math.min(received,Number(bill.total||0)));
+        const change=Number(latest.changeGiven??Math.max(0,received-applied));
+        const balance=Number(latest.balance??Math.max(0,Number(bill.total||0)-applied));
+        const totalCharges=Number(bill.total||0);
+        const w=window.open("","_blank","width=900,height=1000");
+        if(!w){alert("Please allow pop-ups to print the receipt.");return;}
+        w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${escapeHtml(latest.receiptNo||"Payment Receipt")}</title>
+        <style>
+          @page{size:A4 portrait;margin:10mm}*{box-sizing:border-box}
+          body{margin:0;background:#eef3f0;font-family:Arial,Helvetica,sans-serif;color:#18231e}
+          .sheet{width:210mm;min-height:277mm;margin:0 auto;background:#fff;padding:16mm 15mm 24mm;position:relative}
+          .accent{height:9px;background:#087a48;border-radius:8px;margin-bottom:14px}.accent2{height:3px;background:#d4a72c;border-radius:4px;margin-top:-9px;margin-bottom:18px}
+          .head{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-bottom:14px;border-bottom:4px solid #087a48}
+          .brand{display:flex;align-items:center;gap:14px;min-width:0}.brand img{width:88px;height:88px;object-fit:cover;border-radius:16px;border:2px solid #087a48;box-shadow:0 5px 16px rgba(8,122,72,.16);background:#fff}
+          .brand h1{margin:0;color:#087a48;font-size:28px;font-weight:900;letter-spacing:.3px;text-transform:uppercase}.brand p{margin:4px 0;color:#59635e;font-size:11px}
+          .receiptTitle{text-align:right;white-space:nowrap}.receiptTitle h2{margin:0 0 6px;color:#087a48;font-size:24px;font-weight:900;letter-spacing:1px}.receiptTitle .receiptNo{font-weight:800;color:#222;font-size:12px}.receiptTitle .date{font-size:11px;color:#66706b;margin-top:4px}
+          .sectionTitle{margin:18px 0 8px;color:#087a48;font-size:13px;font-weight:900;border-left:6px solid #087a48;padding-left:9px}.info{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+          .box{border:1px solid #dce7e1;border-radius:12px;padding:12px;background:#f7fbf9;line-height:1.7;font-size:11px}.box b{display:block;color:#087a48;font-size:12px;margin-bottom:4px}
+          table{width:100%;border-collapse:collapse;margin-top:10px;border-top:4px solid #087a48}th{background:#087a48;color:#fff;padding:11px 10px;text-align:left;font-size:11px;font-weight:800}td{padding:10px;border-bottom:1px solid #e3ebe7;font-size:11px}td.amount{text-align:right;font-weight:800}
+          .summary{width:58%;margin:18px 0 0 auto;border-top:4px solid #087a48;padding-top:3px}.sumrow{display:flex;justify-content:space-between;gap:20px;padding:9px 4px;border-bottom:1px solid #e7ece9;font-size:12px}.sumrow b{font-weight:900}.grand{font-size:15px;font-weight:900;color:#087a48;border-top:2px solid #087a48;margin-top:3px;padding-top:11px}.change{color:#a65c00;background:#fff8e9}.balance{color:${balance>0?'#c62828':'#087a48'}}
+          .paymentBox{margin-top:18px;border:2px solid #087a48;border-radius:12px;padding:13px;background:#f3fbf7;font-size:11px;line-height:1.7}.paymentBox h3{margin:0 0 5px;color:#087a48;font-size:13px}
+          .thanks{margin-top:28px;padding:15px;text-align:center;border-top:3px solid #087a48;border-bottom:3px solid #087a48;color:#087a48;font-weight:900;font-size:13px}.footer{position:absolute;left:15mm;right:15mm;bottom:8mm;text-align:center;color:#737d78;font-size:9px}.footer strong{color:#087a48}
+          @media print{body{background:#fff}.sheet{margin:0;box-shadow:none;width:auto;min-height:277mm}}
+        </style></head><body><div class="sheet">
+          <div class="accent"></div><div class="accent2"></div>
+          <div class="head"><div class="brand"><img src="${RECEIPT_LOGO}" alt="Elephant Dental Ltd logo"><div><h1>${escapeHtml(clinicName)}</h1>${clinicAddress?`<p>${escapeHtml(clinicAddress)}</p>`:""}${clinicPhone||clinicEmail?`<p>${escapeHtml(clinicPhone)}${clinicPhone&&clinicEmail?" • ":""}${escapeHtml(clinicEmail)}</p>`:""}${dentistPhone?`<p>Dental contact: ${escapeHtml(dentistPhone)}</p>`:""}</div></div>
+          <div class="receiptTitle"><h2>PAYMENT RECEIPT</h2><div class="receiptNo">${escapeHtml(latest.receiptNo||"")}</div><div class="date">${escapeHtml(latest.date||"")}</div></div></div>
+          <div class="sectionTitle">PATIENT & PAYMENT DETAILS</div><div class="info">
+            <div class="box"><b>PATIENT</b>${escapeHtml(p.name||"")}<br><strong>Membership:</strong> ${escapeHtml(p.patientNo||p.membershipNo||"")}<br>${p.phone?`<strong>Phone:</strong> ${escapeHtml(p.phone)}`:""}</div>
+            <div class="box"><b>PAYMENT</b><strong>Method:</strong> ${escapeHtml(latest.paymentMethod||"")}<br><strong>Received by:</strong> ${escapeHtml(latest.receivedByName||"")}<br><strong>Reference:</strong> ${escapeHtml(latest.reference||"-")}</div></div>
+          <div class="sectionTitle">CLINICAL CHARGES</div><table><thead><tr><th>Clinical Service</th><th>Tooth</th><th style="text-align:right">Amount</th></tr></thead><tbody>${rows||`<tr><td colspan="3">No itemized clinical services recorded.</td></tr>`}</tbody></table>
+          <div class="summary"><div class="sumrow"><span>Total Clinical Charges</span><b>${money(totalCharges)}</b></div><div class="sumrow"><span>Amount Received</span><b>${money(received)}</b></div>${covered>0?`<div class="sumrow"><span>Coverage Applied</span><b>${money(covered)}</b></div>`:""}<div class="sumrow"><span>Amount Applied</span><b>${money(applied)}</b></div><div class="sumrow change"><span>Change Given</span><b>${money(change)}</b></div><div class="sumrow grand"><span>Balance After Payment</span><b class="balance">${money(balance)}</b></div></div>
+          ${covered>0||latest.claimStatus||latest.insuranceCompany?`<div class="paymentBox"><h3>Coverage / Claim Information</h3>${covered>0?`Coverage applied: <b>${money(covered)}</b><br>`:""}${latest.insuranceCompany?`Insurance company: ${escapeHtml(latest.insuranceCompany)}<br>`:""}${latest.claimStatus?`Claim status: ${escapeHtml(latest.claimStatus)}<br>`:""}${latest.policyNumber?`Policy number: ${escapeHtml(latest.policyNumber)}<br>`:""}${latest.authorizationNumber?`Authorization number: ${escapeHtml(latest.authorizationNumber)}`:""}</div>`:""}
+          <div class="thanks">${escapeHtml(footer)}</div><div class="footer"><strong>${escapeHtml(clinicName)}</strong> • Generated by Elephant Dental Management System • Please keep this receipt for your records.</div>
+        </div><script>window.onload=function(){setTimeout(function(){window.print();},350);};<\/script></body></html>`);
+        w.document.close();
+    };
+    window.printReceipt=window.clinicPrintLatestReceipt;
+
+    /* ------------------------------------------------------
+       SETTINGS: CLINIC + DENTIST CONTACT + FACTORY RESET
+    ------------------------------------------------------ */
+    window.showSettings=async function(){
+        if(!clinicRequire(["Administrator"])) return;
+        const snap=await getDoc(doc(db,"settings","clinic"));
+        const s=snap.exists()?snap.data():{};
+        document.getElementById("pageTitle").innerHTML="Settings";
+        document.getElementById("content").innerHTML=`
+          <div class="card"><h2>Clinic Settings</h2>
+            <p style="color:#666;margin-bottom:15px;">These details are used on professional receipts and reports.</p>
+            <input id="setClinicName" class="input" value="${escapeHtml(s.name||"Elephant Dental Ltd")}" placeholder="Clinic Name">
+            <input id="setPhone" class="input" value="${escapeHtml(s.phone||"")}" placeholder="Clinic Phone">
+            <input id="setEmail" class="input" value="${escapeHtml(s.email||"")}" placeholder="Clinic Email">
+            <input id="setAddress" class="input" value="${escapeHtml(s.address||"Emali")}" placeholder="Clinic Address">
+            <hr style="margin:20px 0;">
+            <h3 style="color:#0b7d4b;margin-bottom:10px;">Dentist Contact on Receipt</h3>
+            <input id="setDentistName" class="input" value="${escapeHtml(s.dentistName||"")}" placeholder="Dentist / Doctor Name">
+            <input id="setDentistPhone" class="input" value="${escapeHtml(s.dentistPhone||"0795692301")}" placeholder="Dentist Phone Number">
+            <input id="setReceiptFooter" class="input" value="${escapeHtml(s.receiptFooter||"Thank you for visiting Elephant Dental Ltd.")}" placeholder="Receipt Footer Message">
+            <button class="btn receptionBtn" onclick="saveSettings()">SAVE SETTINGS</button>
+          </div>
+          <div class="card" style="margin-top:20px;border:2px solid #c62828;"><h2 style="color:#c62828;">⚠ Factory Reset</h2>
+            <p>This permanently removes clinic data, patients, appointments, clinical records, payments, inventory, treatment prices and all non-Administrator staff.</p>
+            <p><b>Administrator account(s) remain.</b></p>
+            <button id="factoryResetBtn" class="btn" style="background:#c62828 !important;" onclick="factoryResetClinic()">FACTORY RESET</button>
+          </div>`;
+    };
+
+    window.saveSettings=async function(){
+        if(!clinicRequire(["Administrator"])) return;
+        await setDoc(doc(db,"settings","clinic"),{
+            name:document.getElementById("setClinicName")?.value.trim()||"Elephant Dental Ltd",
+            phone:document.getElementById("setPhone")?.value.trim()||"",
+            email:document.getElementById("setEmail")?.value.trim()||"",
+            address:document.getElementById("setAddress")?.value.trim()||"Emali",
+            dentistName:document.getElementById("setDentistName")?.value.trim()||"",
+            dentistPhone:document.getElementById("setDentistPhone")?.value.trim()||"",
+            receiptFooter:document.getElementById("setReceiptFooter")?.value.trim()||"Thank you for visiting Elephant Dental Ltd.",
+            updated:serverTimestamp()
+        },{merge:true});
+        alert("Settings saved successfully.");
+    };
+
+    /* ------------------------------------------------------
+       REPORTS: ADMIN + RECEPTIONIST, DAILY/WEEKLY/MONTHLY
+    ------------------------------------------------------ */
+    function reportPeriod(period,anchor){
+        const base=new Date((anchor||clinicToday())+"T00:00:00");
+        let start=new Date(base), end=new Date(base);
+        if(period==="Weekly"){
+            const day=(base.getDay()+6)%7;
+            start.setDate(base.getDate()-day); end=new Date(start); end.setDate(start.getDate()+6);
+        }else if(period==="Monthly"){
+            start=new Date(base.getFullYear(),base.getMonth(),1); end=new Date(base.getFullYear(),base.getMonth()+1,0);
+        }
+        const iso=d=>d.toISOString().slice(0,10);
+        return {start:iso(start),end:iso(end)};
+    }
+
+    async function collectReportData(period,anchor){
+        const range=reportPeriod(period,anchor);
+        const [patientsSnap,appointmentsSnap,paymentsSnap,visitsSnap,treatmentsSnap]=await Promise.all([
+            getDocs(collection(db,"patients")),getDocs(collection(db,"appointments")),getDocs(collection(db,"payments")),getDocs(collection(db,"visits")),getDocs(collection(db,"treatments"))
+        ]);
+        const inRange=d=>{const x=dateOnly(d);return x>=range.start&&x<=range.end;};
+        let newPatients=0, appointments=0, emergencies=0, sessions=0, received=0, applied=0, change=0;
+        const methods={};
+        patientsSnap.forEach(ds=>{const p=ds.data()||{};const created=p.created?.toDate?.()?p.created.toDate().toISOString().slice(0,10):(p.createdAt||p.registrationDate||"");if(created&&inRange(created))newPatients++;});
+        appointmentsSnap.forEach(ds=>{const a=ds.data()||{};if(inRange(a.date))appointments++;});
+        visitsSnap.forEach(ds=>{const v=ds.data()||{};const completed=v.completedAt?.toDate?.()?v.completedAt.toDate().toISOString().slice(0,10):(v.completedDate||v.date||"");if(completed&&inRange(completed))sessions++;if(v.priority==="Emergency"&&inRange(v.arrivedAt?.toDate?.()?v.arrivedAt.toDate().toISOString().slice(0,10):(v.arrivedDate||v.date||"")))emergencies++;});
+        paymentsSnap.forEach(ds=>{const p=ds.data()||{};if(!inRange(p.date))return;const r=Number(p.amountPaid||0),a=Number(p.amountApplied??p.amountPaid??0),c=Number(p.changeGiven||Math.max(0,r-a));received+=r;applied+=a;change+=c;methods[p.paymentMethod]=(methods[p.paymentMethod]||0)+r;});
+        let treatmentCharges=0;
+        treatmentsSnap.forEach(ds=>{const t=ds.data()||{};const d=t.date||t.createdAt||"";if(t.status==="Completed"&&inRange(d))treatmentCharges+=Number(t.cost||0);});
+        return {range,period,patientsTotal:patientsSnap.size,newPatients,appointments,emergencies,sessions,received,applied,change,methods,treatmentCharges};
+    }
+
+    window.showReports=async function(){
+        if(!clinicRequire(["Administrator","Receptionist"])) return;
+        document.getElementById("pageTitle").innerHTML="Reports";
+        document.getElementById("content").innerHTML=`<div class="card"><h2>Clinic Reports</h2>
+          <div class="reportToolbar"><select id="reportPeriod" class="input" style="width:auto;margin:0;min-width:150px;"><option>Daily</option><option>Weekly</option><option>Monthly</option></select><input id="reportAnchor" class="input" type="date" value="${clinicToday()}" style="width:auto;margin:0;"><button class="btn" style="width:auto;" onclick="loadClinicReport()">VIEW REPORT</button><button class="btn" style="width:auto;" onclick="printClinicReport()">🖨 PRINT A4</button><button class="btn" style="width:auto;" onclick="exportClinicReportExcel()">📊 EXPORT EXCEL</button></div>
+          <div id="reportOutput">Loading report...</div>
+        </div>`;
+        await loadClinicReport();
+    };
+
+    window.loadClinicReport=async function(){
+        const period=document.getElementById("reportPeriod")?.value||"Daily";
+        const anchor=document.getElementById("reportAnchor")?.value||clinicToday();
+        const d=await collectReportData(period,anchor);
+        window.lastClinicReport=d;
+        const methodRows=Object.entries(d.methods).sort((a,b)=>b[1]-a[1]).map(([m,v])=>`<tr><td>${clinicEsc(m)}</td><td>${money(v)}</td></tr>`).join("")||`<tr><td colspan="2">No payments in this period.</td></tr>`;
+        document.getElementById("reportOutput").innerHTML=`
+          <div class="reportRange"><b>${clinicEsc(d.period)} report</b><br>${clinicEsc(d.range.start)} to ${clinicEsc(d.range.end)}</div>
+          <div class="cards">
+            <div class="card"><h3>Patients in System</h3><h2>${d.patientsTotal}</h2></div>
+            <div class="card"><h3>New Patients</h3><h2>${d.newPatients}</h2></div>
+            <div class="card"><h3>Appointments</h3><h2>${d.appointments}</h2></div>
+            <div class="card"><h3>Clinical Sessions</h3><h2>${d.sessions}</h2></div>
+            <div class="card"><h3>Emergency Visits</h3><h2>${d.emergencies}</h2></div>
+            <div class="card"><h3>Amount Received</h3><h2>${money(d.received)}</h2></div>
+            <div class="card"><h3>Amount Applied</h3><h2>${money(d.applied)}</h2></div>
+            <div class="card"><h3>Change Given</h3><h2>${money(d.change)}</h2></div>
+          </div>
+          <div class="card" style="margin-top:18px;"><h3>Payment Methods</h3><table class="reportTable"><tr><th>Method</th><th>Total Received</th></tr>${methodRows}</table></div>
+          <div class="card" style="margin-top:18px;"><h3>Clinical Charges Recorded</h3><h2>${money(d.treatmentCharges)}</h2></div>`;
+    };
+
+    function reportHtml(d){
+        const methodRows=Object.entries(d.methods).map(([m,v])=>`<tr><td>${escapeHtml(m)}</td><td style="text-align:right">KES ${Number(v).toLocaleString()}</td></tr>`).join("")||`<tr><td colspan="2">No payments</td></tr>`;
+        return `<h1>Elephant Dental Ltd</h1><h2>Clinic ${escapeHtml(d.period)} Report</h2><p>${escapeHtml(d.range.start)} to ${escapeHtml(d.range.end)}</p><hr><table><tr><th>Metric</th><th>Value</th></tr><tr><td>Patients in system</td><td>${d.patientsTotal}</td></tr><tr><td>New patients</td><td>${d.newPatients}</td></tr><tr><td>Appointments</td><td>${d.appointments}</td></tr><tr><td>Clinical sessions</td><td>${d.sessions}</td></tr><tr><td>Emergency visits</td><td>${d.emergencies}</td></tr><tr><td>Amount received</td><td>${money(d.received)}</td></tr><tr><td>Amount applied</td><td>${money(d.applied)}</td></tr><tr><td>Change given</td><td>${money(d.change)}</td></tr><tr><td>Clinical charges recorded</td><td>${money(d.treatmentCharges)}</td></tr></table><h3>Payment Methods</h3><table><tr><th>Method</th><th>Total Received</th></tr>${methodRows}</table>`;
+    }
+
+    window.printClinicReport=async function(){
+        if(!clinicRequire(["Administrator","Receptionist"])) return;
+        if(!window.lastClinicReport) await loadClinicReport();
+        const d=window.lastClinicReport;if(!d)return;
+        const w=window.open("","_blank","width=900,height=1000");if(!w){alert("Please allow pop-ups to print the report.");return;}
+        w.document.write(`<!doctype html><html><head><title>Clinic Report</title><style>@page{size:A4 portrait;margin:14mm}body{font-family:Arial;color:#222}h1{color:#0b7d4b}h2{color:#d9468a}table{width:100%;border-collapse:collapse;margin:18px 0}th{background:#0b7d4b;color:white}td,th{padding:10px;border-bottom:1px solid #ddd;text-align:left}.total{font-size:20px;font-weight:bold}</style></head><body>${reportHtml(d)}<script>window.onload=function(){window.print();};<\/script></body></html>`);w.document.close();
+    };
+
+    window.exportClinicReportExcel=async function(){
+        if(!clinicRequire(["Administrator","Receptionist"])) return;
+        if(!window.lastClinicReport) await loadClinicReport();
+        const d=window.lastClinicReport;if(!d)return;
+        const rows=Object.entries(d.methods).map(([m,v])=>`<tr><td>${escapeHtml(m)}</td><td>${Number(v)}</td></tr>`).join("");
+        const xls=`<html><head><meta charset="utf-8"></head><body><h1>Elephant Dental Ltd</h1><h2>${escapeHtml(d.period)} Report</h2><p>${escapeHtml(d.range.start)} to ${escapeHtml(d.range.end)}</p><table border="1"><tr><th>Metric</th><th>Value</th></tr><tr><td>Patients in system</td><td>${d.patientsTotal}</td></tr><tr><td>New patients</td><td>${d.newPatients}</td></tr><tr><td>Appointments</td><td>${d.appointments}</td></tr><tr><td>Clinical sessions</td><td>${d.sessions}</td></tr><tr><td>Emergency visits</td><td>${d.emergencies}</td></tr><tr><td>Amount received</td><td>${d.received}</td></tr><tr><td>Amount applied</td><td>${d.applied}</td></tr><tr><td>Change given</td><td>${d.change}</td></tr><tr><td>Clinical charges recorded</td><td>${d.treatmentCharges}</td></tr></table><h3>Payment Methods</h3><table border="1"><tr><th>Method</th><th>Received</th></tr>${rows}</table></body></html>`;
+        const blob=new Blob([xls],{type:"application/vnd.ms-excel"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=`Elephant_Dental_${d.period}_${d.range.start}_${d.range.end}.xls`;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+    };
+
+    /* Receptionist and Administrator both get Reports; Dentist does not. */
+    const oldApplyRole=window.applyRole;
+    window.applyRole=function(r){
+        const rr=clinicRole(r);window.currentRole=rr;
+        const permissions={
+          Administrator:["home","patients","appointments","dentist","treatments","payments","inventory","reports","staff","settings","prices"],
+          Receptionist:["home","patients","appointments","payments","reports","invoices"],
+          Dentist:["home","patients","appointments","dentist","treatments","prescriptions"]
+        };
+        document.querySelectorAll(".menu button[data-page]").forEach(btn=>{btn.style.display=permissions[rr]?.includes(btn.dataset.page)?"block":"none";});
+    };
+
+    /* Prevent Dentist from seeing/calling payment collection inside a patient file. */
+    const oldOpenPatientFile=window.openPatientFile;
+    window.openPatientFile=async function(id){
+        await oldOpenPatientFile(id);
+        if(role()==="Dentist"){
+            const content=document.getElementById("patientFileContent");
+            if(content) content.querySelectorAll("button").forEach(b=>{if((b.textContent||"").toLowerCase().includes("payment")) b.remove();});
+        }
+    };
+
+    /* Final page routing for reports and payment separation. */
+    const priorShowPage=window.showPage;
+    window.showPage=async function(page){
+        if(page==="reports") return window.showReports();
+        if(page==="payments" && role()==="Dentist") return alert("Payments are handled by Reception only.");
+        return priorShowPage(page);
+    };
+})();
+
+/* FINAL SECURE AUTH + STAFF HANDLERS — 4-DIGIT PIN COMPATIBILITY */
+const CLINIC_AUTH_SALT = "elephant-dental-auth-v2";
+
+function clinicAuthEmail(username){
+  const safe=String(username||"").trim().toLowerCase().replace(/[^a-z0-9._-]/g,"-");
+  return `u-${safe}@auth.elephantdental.local`;
+}
+
+async function clinicAuthPassword(username,pin){
+  const raw=`${CLINIC_AUTH_SALT}|${String(username||"").trim().toLowerCase()}|${String(pin||"").trim()}`;
+  const bytes=new TextEncoder().encode(raw);
+  const digest=await crypto.subtle.digest("SHA-256",bytes);
+  return "ED2!"+Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+
+function clinicLegacyPinValid(pin){return /^\d{4}$/.test(String(pin||""));}
+
+async function clinicFindLegacyStaff(username){
+  const wanted=String(username||"").trim().toLowerCase();
+  if(!wanted) return null;
+  // Legacy records were created before usernames were normalized, so
+  // Firestore exact matching can miss accounts such as "John" vs "john".
+  // Scan the staff collection only during legacy migration; normal logins
+  // use Firebase Authentication + the migrated UID profile.
+  const snap=await getDocs(collection(db,"staff"));
+  for(const ds of snap.docs){
+    const st=ds.data()||{};
+    const stored=String(st.username??st.userName??"").trim().toLowerCase();
+    if(stored===wanted) return ds;
+  }
+  return null;
+}
+
+async function clinicMigrateLegacyStaff(legacyDoc,username,pin,selectedRole){
+  const old=legacyDoc.data()||{};
+  const oldRole=normalizeRole(old.role||old.staffRole||"");
+  if(old.active===false||oldRole!==selectedRole) throw new Error("INVALID_CREDENTIALS");
+  const legacyPin=String(old.pin??old.PIN??old.password??"").trim();
+  if(!clinicLegacyPinValid(pin) || legacyPin!==String(pin)) throw new Error("INVALID_CREDENTIALS");
+
+  const authEmail=clinicAuthEmail(username);
+  const authPassword=await clinicAuthPassword(username,pin);
+  let uid=null;
+  try{
+    const created=await createUserWithEmailAndPassword(staffAdminAuth,authEmail,authPassword);
+    uid=created.user.uid;
+  }catch(e){
+    if(String(e?.code||"").includes("email-already-in-use")){
+      try{
+        const existing=await signInWithEmailAndPassword(staffAdminAuth,authEmail,authPassword);
+        uid=existing.user.uid;
+      }catch(_){ throw e; }
+    }else throw e;
+  }
+
+  await setDoc(doc(db,"staff",uid),{
+    name:old.name||"", phone:old.phone||"", email:old.email||"", username,
+    authEmail, role:oldRole, active:old.active!==false,
+    migratedFrom:legacyDoc.id, migratedAt:serverTimestamp()
+  });
+  await setDoc(doc(db,"staffIndex",username),{uid,authEmail,updated:serverTimestamp()});
+  if(legacyDoc.id!==uid) await deleteDoc(doc(db,"staff",legacyDoc.id));
+  await signOut(staffAdminAuth).catch(()=>{});
+  return uid;
+}
+
+window.login=async function(){
+ const selectedRole=normalizeRole(document.getElementById("loginRole")?.value||"");
+ const username=(document.getElementById("loginUser")?.value||"").trim().toLowerCase();
+ const pin=(document.getElementById("loginPassword")?.value||"").trim();
+ if(!selectedRole){alert("Please select your role.");return;}
+ if(!username||!pin){alert("Please enter your username and PIN.");return;}
+ if(!clinicLegacyPinValid(pin)){alert("PIN must contain exactly 4 digits.");return;}
+
+ try{
+   const authEmail=clinicAuthEmail(username);
+   const authPassword=await clinicAuthPassword(username,pin);
+   let cred=null;
+   try{
+     cred=await signInWithEmailAndPassword(auth,authEmail,authPassword);
+   }catch(authError){
+     const code=String(authError?.code||"");
+     const canTryLegacy=code.includes("user-not-found")||code.includes("invalid-credential")||code.includes("wrong-password");
+     if(!canTryLegacy) throw authError;
+
+     const legacy=await clinicFindLegacyStaff(username);
+     if(!legacy) throw new Error("INVALID_CREDENTIALS");
+     await clinicMigrateLegacyStaff(legacy,username,pin,selectedRole);
+     cred=await signInWithEmailAndPassword(auth,authEmail,authPassword);
+   }
+
+   const ss=await getDoc(doc(db,"staff",cred.user.uid));
+   if(!ss.exists()){await signOut(auth);alert("Staff profile not found. Contact the Administrator.");return;}
+   const staff=ss.data()||{},role=normalizeRole(staff.role);
+   if(staff.active===false||role!==selectedRole){await signOut(auth);alert("Invalid username, PIN or assigned role.");return;}
+   window.currentStaff={id:ss.id,uid:cred.user.uid,...staff,role};
+   window.currentRole=role;
+   const u=document.getElementById("currentUser");if(u)u.textContent=(staff.name||username)+" ("+role+")";
+   const lp=document.getElementById("loginPage"),dbd=document.getElementById("dashboard");
+   if(lp)lp.style.display="none";if(dbd)dbd.style.display="block";
+   applyRole(role);await loadDashboard();await showPage("home");
+ }catch(e){
+   console.error(e);
+   if(e?.message==="INVALID_CREDENTIALS"){alert("Invalid username or PIN.");return;}
+   alert(clinicAuthErrorMessage(e));
+ }
+};
+
+window.logout=async function(){
+ try{await signOut(auth);}catch(e){console.error(e);}
+ window.currentStaff=null;window.currentRole=null;
+ const lp=document.getElementById("loginPage"),dbd=document.getElementById("dashboard");
+ if(dbd)dbd.style.display="none";if(lp)lp.style.display="flex";
+ const a=document.getElementById("loginUser"),b=document.getElementById("loginPassword"),c=document.getElementById("loginRole");
+ if(a)a.value="";if(b)b.value="";if(c)c.value="";window.scrollTo(0,0);
+};
+
+async function clinicReauthenticateAdmin(){
+ if(!auth.currentUser){alert("Your session has expired. Please log in again.");return false;}
+ const pin=prompt("Enter your Administrator PIN to confirm:");
+ if(pin===null)return false;
+ if(!clinicLegacyPinValid(pin)){alert("PIN must contain exactly 4 digits.");return false;}
+ try{
+   const password=await clinicAuthPassword(window.currentStaff?.username||"",pin);
+   const c=EmailAuthProvider.credential(auth.currentUser.email,password);
+   await reauthenticateWithCredential(auth.currentUser,c);
+   return true;
+ }catch(e){console.error(e);alert("Administrator verification failed.");return false;}
+}
+
+window.saveStaff=async function(){
+ if(!requireRole(["Administrator"]))return;
+ const name=document.getElementById("staffName")?.value.trim();
+ const phone=document.getElementById("staffPhone")?.value.trim();
+ const email=document.getElementById("staffEmail")?.value.trim();
+ const username=document.getElementById("staffUsername")?.value.trim().toLowerCase();
+ const pin=document.getElementById("staffPin")?.value.trim();
+ const role=normalizeRole(document.getElementById("staffRole")?.value);
+ if(!name||!username||!pin||!role){alert("Name, username, PIN and role are required.");return;}
+ if(!clinicLegacyPinValid(pin)){alert("PIN must contain exactly 4 digits.");return;}
+ if((await clinicFindLegacyStaff(username))){alert("That username already exists.");return;}
+ const authEmail=clinicAuthEmail(username),authPassword=await clinicAuthPassword(username,pin);
+ try{
+   const created=await createUserWithEmailAndPassword(staffAdminAuth,authEmail,authPassword);
+   const uid=created.user.uid;
+   await setDoc(doc(db,"staff",uid),{name,phone,email,username,authEmail,role,active:true,created:serverTimestamp()});
+   await setDoc(doc(db,"staffIndex",username),{uid,authEmail,created:serverTimestamp()});
+   await signOut(staffAdminAuth);
+   alert("Staff account saved successfully.");await showStaff();
+ }catch(e){console.error(e);try{await signOut(staffAdminAuth);}catch(_){}alert(clinicAuthErrorMessage(e));}
+};
+
+window.drawStaff=async function(){
+ const holder=document.getElementById("staffList");if(!holder)return;
+ const snap=await getDocs(collection(db,"staff"));let html="";
+ snap.forEach(ds=>{const st=ds.data()||{};html+=`<div class="card" style="margin-bottom:15px;">
+ <h3>${clinicEsc(st.name)}</h3><p><b>Role:</b> ${clinicEsc(normalizeRole(st.role))}</p>
+ <p><b>Username:</b> ${clinicEsc(st.username||"Not set")}</p>
+ <p><b>PIN:</b> <span style="color:#666;">Protected by Firebase Authentication</span></p>
+ <p><b>Phone:</b> ${clinicEsc(st.phone||"")}</p><p><b>Email:</b> ${clinicEsc(st.email||"")}</p>
+ <p><b>Status:</b> ${st.active===false?"Inactive":"Active"}</p>
+ <button class="btn" onclick="editStaff('${ds.id}')">Edit</button>
+ <button class="btn" style="background:#d9534f;" onclick="deleteStaff('${ds.id}')">Delete</button></div>`;});
+ holder.innerHTML=html||"<p>No staff accounts found.</p>";
+};
+
+window.editStaff=async function(id){
+ if(!requireRole(["Administrator"]))return;
+ const snap=await getDoc(doc(db,"staff",id));if(!snap.exists()){alert("Staff member not found.");return;}
+ const st=snap.data()||{};
+ document.getElementById("staffName").value=st.name||"";
+ document.getElementById("staffPhone").value=st.phone||"";
+ document.getElementById("staffEmail").value=st.email||"";
+ document.getElementById("staffUsername").value=st.username||"";
+ document.getElementById("staffPin").value="";
+ document.getElementById("staffPin").placeholder="New PIN (leave blank to keep current)";
+ document.getElementById("staffRole").value=normalizeRole(st.role);
+ window.editingStaffId=id;
+ const b=document.getElementById("saveStaffBtn");b.textContent="Update Staff";b.onclick=updateStaff;window.scrollTo(0,0);
+};
+
+window.updateStaff=async function(){
+ if(!requireRole(["Administrator"]))return;
+ const uid=window.editingStaffId;if(!uid)return;
+ const snap=await getDoc(doc(db,"staff",uid));if(!snap.exists()){alert("Staff member not found.");return;}
+ const old=snap.data()||{};
+ const name=document.getElementById("staffName").value.trim(),phone=document.getElementById("staffPhone").value.trim(),email=document.getElementById("staffEmail").value.trim(),username=document.getElementById("staffUsername").value.trim().toLowerCase(),newPin=document.getElementById("staffPin").value.trim(),role=normalizeRole(document.getElementById("staffRole").value);
+ if(!name||!username||!role){alert("Complete the staff account fields.");return;}
+ if(newPin&&!clinicLegacyPinValid(newPin)){alert("PIN must contain exactly 4 digits.");return;}
+ const other=await clinicFindLegacyStaff(username);
+ if(other&&other.id!==uid){alert("That username already belongs to another staff member.");return;}
+ const oldUsername=String(old.username||"").toLowerCase(),oldPin=prompt(newPin?"Enter this staff member's current PIN to authorize the change:":"Enter this staff member's current PIN to confirm the account update:");
+ if(oldPin===null)return;
+ if(!clinicLegacyPinValid(oldPin)){alert("PIN must contain exactly 4 digits.");return;}
+ try{
+   const oldEmail=old.authEmail||clinicAuthEmail(oldUsername);
+   const oldPassword=await clinicAuthPassword(oldUsername,oldPin);
+   await signInWithEmailAndPassword(staffAdminAuth,oldEmail,oldPassword);
+   if(username!==oldUsername){
+     const newEmail=clinicAuthEmail(username);
+     await updateEmail(staffAdminAuth.currentUser,newEmail);
+     await setDoc(doc(db,"staffIndex",username),{uid,authEmail:newEmail,updated:serverTimestamp()});
+     if(oldUsername)await deleteDoc(doc(db,"staffIndex",oldUsername)).catch(()=>{});
+     old.authEmail=newEmail;
+   }
+   if(newPin){
+     const newPassword=await clinicAuthPassword(username,newPin);
+     await updatePassword(staffAdminAuth.currentUser,newPassword);
+   }
+   await signOut(staffAdminAuth);
+   const finalAuthEmail=clinicAuthEmail(username);
+   await updateDoc(doc(db,"staff",uid),{name,phone,email,username,authEmail:finalAuthEmail,role,active:true,updated:serverTimestamp()});
+   window.editingStaffId=null;document.getElementById("staffPin").value="";
+   alert("Staff account updated successfully.");await showStaff();
+ }catch(e){console.error(e);try{await signOut(staffAdminAuth);}catch(_){}alert(clinicAuthErrorMessage(e));}
+};
+
+window.deleteStaff=async function(id){
+ if(!requireRole(["Administrator"]))return;
+ if(id===auth.currentUser?.uid){alert("You cannot delete the currently signed-in Administrator account.");return;}
+ if(!confirm("Delete this staff account? Their clinic access will be removed."))return;
+ try{
+   const snap=await getDoc(doc(db,"staff",id));if(!snap.exists())return;
+   const st=snap.data()||{};
+   if(st.username)await deleteDoc(doc(db,"staffIndex",String(st.username).toLowerCase())).catch(()=>{});
+   await deleteDoc(doc(db,"staff",id));
+   alert("Staff clinic access removed. For complete Firebase Auth user deletion, use a trusted server/Admin SDK workflow.");await drawStaff();
+ }catch(e){console.error(e);alert("Staff account could not be removed.");}
+};
+
+window.factoryResetClinic=async function(){
+ if(!clinicRequire(["Administrator"]))return;
+ if(!(await clinicReauthenticateAdmin()))return;
+ const c=prompt("This permanently deletes clinic data and non-Administrator staff. Type RESET CLINIC to continue:");
+ if(c!=="RESET CLINIC"){alert("Factory reset cancelled. Nothing was changed.");return;}
+ if(!confirm("FINAL WARNING: all patients, appointments, clinical records, payments, inventory, treatment prices and non-Administrator staff will be deleted. Continue?"))return;
+ try{
+  for(const name of clinicResetCollections)await clinicDeleteCollection(name);
+  const ss=await getDocs(collection(db,"staff"));
+  for(const ds of ss.docs){const st=ds.data()||{};if(normalizeRole(st.role)!=="Administrator"){if(st.username)await deleteDoc(doc(db,"staffIndex",String(st.username).toLowerCase())).catch(()=>{});await deleteDoc(doc(db,"staff",ds.id));}}
+  await deleteDoc(doc(db,"counters","patients")).catch(()=>{});await deleteDoc(doc(db,"settings","clinic")).catch(()=>{});
+  alert("Factory reset completed successfully. Administrator account(s) remain. The system is ready for fresh clinic setup.");window.location.reload();
+ }catch(e){console.error(e);alert("Factory reset could not be completed. Check Firestore permissions.");}
+};
+
+window.clearClinicDataKeepStaff=async function(){
+ if(!clinicRequire(["Administrator"]))return;
+ if(!(await clinicReauthenticateAdmin()))return;
+ const c=prompt("This permanently clears clinic operational data but KEEPS ALL STAFF ACCOUNTS. Type CLEAR CLINIC DATA to continue:");
+ if(c!=="CLEAR CLINIC DATA"){alert("Clinic data reset cancelled. Nothing was changed.");return;}
+ if(!confirm("FINAL WARNING: patients, appointments, clinical records, payments, inventory, stock history, treatment prices and related clinic data will be deleted. ALL STAFF ACCOUNTS WILL REMAIN. Continue?"))return;
+ try{
+  for(const name of clinicResetCollections)await clinicDeleteCollection(name);
+  await deleteDoc(doc(db,"counters","patients")).catch(()=>{});await deleteDoc(doc(db,"settings","clinic")).catch(()=>{});
+  alert("Clinic data cleared successfully. All staff accounts remain.");window.location.reload();
+ }catch(e){console.error(e);alert("Clinic data could not be cleared. Check Firestore permissions.");}
+};
+</script>
+
+</body>
+</html>

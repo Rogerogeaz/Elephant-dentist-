@@ -1,0 +1,31 @@
+{
+  "name": "Elephant Dental Ltd",
+  "short_name": "Elephant Dental",
+  "description": "Elephant Dental Ltd Clinic Management System",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#0b7d4b",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-912x912.png",
+      "sizes": "912x912",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
